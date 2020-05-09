@@ -1959,11 +1959,11 @@ Sovereign country
 </tbody>
 </table>
 <ol start="3" style="list-style-type: decimal">
-<li>(5%) Mediante la función <code>kable()</code>, despliegue en una tabla las diez primeras observaciones y las variables correspondientes a nombre del país, población, esperanza de vida y de renta per cápita del data frame <code>world</code>. Despliegue los nombres de las columnas en español.</li>
+<li>(5%) Mediante la función <code>kable()</code>, despliegue en una tabla las diez primeras observaciones y las variables correspondientes a nombre del país, continente, población, esperanza de vida y de renta per cápita del data frame <code>world</code>. Despliegue los nombres de las columnas en español.</li>
 </ol>
 <pre class="r"><code>kable(
-  world[1:10, c(&quot;name_long&quot;, &quot;pop&quot;, &quot;lifeExp&quot;, &quot;gdpPercap&quot;)], 
-  col.names = c(&quot;País&quot;, &quot;Población&quot;, &quot;Esperanza de vida&quot;, &quot;Renta per cápita&quot;),
+  world[1:10, c(&quot;name_long&quot;, &quot;continent&quot;, &quot;pop&quot;, &quot;lifeExp&quot;, &quot;gdpPercap&quot;)], 
+  col.names = c(&quot;País&quot;, &quot;Continente&quot;, &quot;Población&quot;, &quot;Esperanza de vida&quot;, &quot;Renta per cápita&quot;),
   caption=&quot;Datos demográficos de los países del mundo&quot;
   )</code></pre>
 <table>
@@ -1974,6 +1974,9 @@ Datos demográficos de los países del mundo
 <tr>
 <th style="text-align:left;">
 País
+</th>
+<th style="text-align:left;">
+Continente
 </th>
 <th style="text-align:right;">
 Población
@@ -1991,6 +1994,9 @@ Renta per cápita
 <td style="text-align:left;">
 Fiji
 </td>
+<td style="text-align:left;">
+Oceania
+</td>
 <td style="text-align:right;">
 885806
 </td>
@@ -2004,6 +2010,9 @@ Fiji
 <tr>
 <td style="text-align:left;">
 Tanzania
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 52234869
@@ -2019,6 +2028,9 @@ Tanzania
 <td style="text-align:left;">
 Western Sahara
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 NA
 </td>
@@ -2032,6 +2044,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Canada
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 35535348
@@ -2047,6 +2062,9 @@ Canada
 <td style="text-align:left;">
 United States
 </td>
+<td style="text-align:left;">
+North America
+</td>
 <td style="text-align:right;">
 318622525
 </td>
@@ -2060,6 +2078,9 @@ United States
 <tr>
 <td style="text-align:left;">
 Kazakhstan
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 17288285
@@ -2075,6 +2096,9 @@ Kazakhstan
 <td style="text-align:left;">
 Uzbekistan
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 30757700
 </td>
@@ -2088,6 +2112,9 @@ Uzbekistan
 <tr>
 <td style="text-align:left;">
 Papua New Guinea
+</td>
+<td style="text-align:left;">
+Oceania
 </td>
 <td style="text-align:right;">
 7755785
@@ -2103,6 +2130,9 @@ Papua New Guinea
 <td style="text-align:left;">
 Indonesia
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 255131116
 </td>
@@ -2116,6 +2146,9 @@ Indonesia
 <tr>
 <td style="text-align:left;">
 Argentina
+</td>
+<td style="text-align:left;">
+South America
 </td>
 <td style="text-align:right;">
 42981515
@@ -2133,13 +2166,13 @@ Argentina
 <li></li>
 </ol>
 <pre class="r"><code>kable(
-  world[, c(&quot;name_long&quot;, &quot;pop&quot;, &quot;lifeExp&quot;, &quot;gdpPercap&quot;)], 
-  col.names = c(&quot;País&quot;, &quot;Población&quot;, &quot;Esperanza de vida&quot;, &quot;Renta per cápita&quot;),
+  world[, c(&quot;name_long&quot;, &quot;continent&quot;, &quot;pop&quot;, &quot;lifeExp&quot;, &quot;gdpPercap&quot;)], 
+  col.names = c(&quot;País&quot;, &quot;Continente&quot;, &quot;Población&quot;, &quot;Esperanza de vida&quot;, &quot;Renta per cápita&quot;),
   caption=&quot;Datos demográficos de los países del mundo&quot;
   ) %&gt;%
 kable_styling() %&gt;%
-scroll_box(width = &quot;1000px&quot;, height = &quot;500px&quot;, fixed_thead = TRUE)</code></pre>
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:1000px; ">
+scroll_box(width = &quot;800px&quot;, height = &quot;500px&quot;, fixed_thead = TRUE)</code></pre>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:800px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 Datos demográficos de los países del mundo
@@ -2148,6 +2181,9 @@ Datos demográficos de los países del mundo
 <tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
 País
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Continente
 </th>
 <th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
 Población
@@ -2165,6 +2201,9 @@ Renta per cápita
 <td style="text-align:left;">
 Fiji
 </td>
+<td style="text-align:left;">
+Oceania
+</td>
 <td style="text-align:right;">
 885806
 </td>
@@ -2178,6 +2217,9 @@ Fiji
 <tr>
 <td style="text-align:left;">
 Tanzania
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 52234869
@@ -2193,6 +2235,9 @@ Tanzania
 <td style="text-align:left;">
 Western Sahara
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 NA
 </td>
@@ -2206,6 +2251,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Canada
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 35535348
@@ -2221,6 +2269,9 @@ Canada
 <td style="text-align:left;">
 United States
 </td>
+<td style="text-align:left;">
+North America
+</td>
 <td style="text-align:right;">
 318622525
 </td>
@@ -2234,6 +2285,9 @@ United States
 <tr>
 <td style="text-align:left;">
 Kazakhstan
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 17288285
@@ -2249,6 +2303,9 @@ Kazakhstan
 <td style="text-align:left;">
 Uzbekistan
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 30757700
 </td>
@@ -2262,6 +2319,9 @@ Uzbekistan
 <tr>
 <td style="text-align:left;">
 Papua New Guinea
+</td>
+<td style="text-align:left;">
+Oceania
 </td>
 <td style="text-align:right;">
 7755785
@@ -2277,6 +2337,9 @@ Papua New Guinea
 <td style="text-align:left;">
 Indonesia
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 255131116
 </td>
@@ -2290,6 +2353,9 @@ Indonesia
 <tr>
 <td style="text-align:left;">
 Argentina
+</td>
+<td style="text-align:left;">
+South America
 </td>
 <td style="text-align:right;">
 42981515
@@ -2305,6 +2371,9 @@ Argentina
 <td style="text-align:left;">
 Chile
 </td>
+<td style="text-align:left;">
+South America
+</td>
 <td style="text-align:right;">
 17613798
 </td>
@@ -2318,6 +2387,9 @@ Chile
 <tr>
 <td style="text-align:left;">
 Democratic Republic of the Congo
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 73722860
@@ -2333,6 +2405,9 @@ Democratic Republic of the Congo
 <td style="text-align:left;">
 Somalia
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 13513125
 </td>
@@ -2346,6 +2421,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Kenya
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 46024250
@@ -2361,6 +2439,9 @@ Kenya
 <td style="text-align:left;">
 Sudan
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 37737913
 </td>
@@ -2374,6 +2455,9 @@ Sudan
 <tr>
 <td style="text-align:left;">
 Chad
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 13569438
@@ -2389,6 +2473,9 @@ Chad
 <td style="text-align:left;">
 Haiti
 </td>
+<td style="text-align:left;">
+North America
+</td>
 <td style="text-align:right;">
 10572466
 </td>
@@ -2402,6 +2489,9 @@ Haiti
 <tr>
 <td style="text-align:left;">
 Dominican Republic
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 10405844
@@ -2417,6 +2507,9 @@ Dominican Republic
 <td style="text-align:left;">
 Russian Federation
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 143819666
 </td>
@@ -2430,6 +2523,9 @@ Russian Federation
 <tr>
 <td style="text-align:left;">
 Bahamas
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 382169
@@ -2445,6 +2541,9 @@ Bahamas
 <td style="text-align:left;">
 Falkland Islands
 </td>
+<td style="text-align:left;">
+South America
+</td>
 <td style="text-align:right;">
 NA
 </td>
@@ -2458,6 +2557,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Norway
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 NA
@@ -2473,6 +2575,9 @@ NA
 <td style="text-align:left;">
 Greenland
 </td>
+<td style="text-align:left;">
+North America
+</td>
 <td style="text-align:right;">
 56295
 </td>
@@ -2486,6 +2591,9 @@ NA
 <tr>
 <td style="text-align:left;">
 French Southern and Antarctic Lands
+</td>
+<td style="text-align:left;">
+Seven seas (open ocean)
 </td>
 <td style="text-align:right;">
 NA
@@ -2501,6 +2609,9 @@ NA
 <td style="text-align:left;">
 Timor-Leste
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 1212814
 </td>
@@ -2514,6 +2625,9 @@ Timor-Leste
 <tr>
 <td style="text-align:left;">
 South Africa
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 54539571
@@ -2529,6 +2643,9 @@ South Africa
 <td style="text-align:left;">
 Lesotho
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 2145785
 </td>
@@ -2542,6 +2659,9 @@ Lesotho
 <tr>
 <td style="text-align:left;">
 Mexico
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 124221600
@@ -2557,6 +2677,9 @@ Mexico
 <td style="text-align:left;">
 Uruguay
 </td>
+<td style="text-align:left;">
+South America
+</td>
 <td style="text-align:right;">
 3419546
 </td>
@@ -2570,6 +2693,9 @@ Uruguay
 <tr>
 <td style="text-align:left;">
 Brazil
+</td>
+<td style="text-align:left;">
+South America
 </td>
 <td style="text-align:right;">
 204213133
@@ -2585,6 +2711,9 @@ Brazil
 <td style="text-align:left;">
 Bolivia
 </td>
+<td style="text-align:left;">
+South America
+</td>
 <td style="text-align:right;">
 10562159
 </td>
@@ -2598,6 +2727,9 @@ Bolivia
 <tr>
 <td style="text-align:left;">
 Peru
+</td>
+<td style="text-align:left;">
+South America
 </td>
 <td style="text-align:right;">
 30973354
@@ -2613,6 +2745,9 @@ Peru
 <td style="text-align:left;">
 Colombia
 </td>
+<td style="text-align:left;">
+South America
+</td>
 <td style="text-align:right;">
 47791911
 </td>
@@ -2626,6 +2761,9 @@ Colombia
 <tr>
 <td style="text-align:left;">
 Panama
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 3903986
@@ -2641,6 +2779,9 @@ Panama
 <td style="text-align:left;">
 Costa Rica
 </td>
+<td style="text-align:left;">
+North America
+</td>
 <td style="text-align:right;">
 4757575
 </td>
@@ -2654,6 +2795,9 @@ Costa Rica
 <tr>
 <td style="text-align:left;">
 Nicaragua
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 6013997
@@ -2669,6 +2813,9 @@ Nicaragua
 <td style="text-align:left;">
 Honduras
 </td>
+<td style="text-align:left;">
+North America
+</td>
 <td style="text-align:right;">
 8809216
 </td>
@@ -2682,6 +2829,9 @@ Honduras
 <tr>
 <td style="text-align:left;">
 El Salvador
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 6281189
@@ -2697,6 +2847,9 @@ El Salvador
 <td style="text-align:left;">
 Guatemala
 </td>
+<td style="text-align:left;">
+North America
+</td>
 <td style="text-align:right;">
 15923559
 </td>
@@ -2710,6 +2863,9 @@ Guatemala
 <tr>
 <td style="text-align:left;">
 Belize
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 351694
@@ -2725,6 +2881,9 @@ Belize
 <td style="text-align:left;">
 Venezuela
 </td>
+<td style="text-align:left;">
+South America
+</td>
 <td style="text-align:right;">
 30738378
 </td>
@@ -2738,6 +2897,9 @@ Venezuela
 <tr>
 <td style="text-align:left;">
 Guyana
+</td>
+<td style="text-align:left;">
+South America
 </td>
 <td style="text-align:right;">
 763393
@@ -2753,6 +2915,9 @@ Guyana
 <td style="text-align:left;">
 Suriname
 </td>
+<td style="text-align:left;">
+South America
+</td>
 <td style="text-align:right;">
 547928
 </td>
@@ -2766,6 +2931,9 @@ Suriname
 <tr>
 <td style="text-align:left;">
 France
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 NA
@@ -2781,6 +2949,9 @@ NA
 <td style="text-align:left;">
 Ecuador
 </td>
+<td style="text-align:left;">
+South America
+</td>
 <td style="text-align:right;">
 15903112
 </td>
@@ -2794,6 +2965,9 @@ Ecuador
 <tr>
 <td style="text-align:left;">
 Puerto Rico
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 3534874
@@ -2809,6 +2983,9 @@ Puerto Rico
 <td style="text-align:left;">
 Jamaica
 </td>
+<td style="text-align:left;">
+North America
+</td>
 <td style="text-align:right;">
 2862087
 </td>
@@ -2822,6 +2999,9 @@ Jamaica
 <tr>
 <td style="text-align:left;">
 Cuba
+</td>
+<td style="text-align:left;">
+North America
 </td>
 <td style="text-align:right;">
 11439767
@@ -2837,6 +3017,9 @@ NA
 <td style="text-align:left;">
 Zimbabwe
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 15411675
 </td>
@@ -2850,6 +3033,9 @@ Zimbabwe
 <tr>
 <td style="text-align:left;">
 Botswana
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 2168573
@@ -2865,6 +3051,9 @@ Botswana
 <td style="text-align:left;">
 Namibia
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 2370992
 </td>
@@ -2878,6 +3067,9 @@ Namibia
 <tr>
 <td style="text-align:left;">
 Senegal
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 14546111
@@ -2893,6 +3085,9 @@ Senegal
 <td style="text-align:left;">
 Mali
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 16962846
 </td>
@@ -2906,6 +3101,9 @@ Mali
 <tr>
 <td style="text-align:left;">
 Mauritania
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 4063920
@@ -2921,6 +3119,9 @@ Mauritania
 <td style="text-align:left;">
 Benin
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 10286712
 </td>
@@ -2934,6 +3135,9 @@ Benin
 <tr>
 <td style="text-align:left;">
 Niger
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 19148219
@@ -2949,6 +3153,9 @@ Niger
 <td style="text-align:left;">
 Nigeria
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 176460502
 </td>
@@ -2962,6 +3169,9 @@ Nigeria
 <tr>
 <td style="text-align:left;">
 Cameroon
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 22239904
@@ -2977,6 +3187,9 @@ Cameroon
 <td style="text-align:left;">
 Togo
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 7228915
 </td>
@@ -2990,6 +3203,9 @@ Togo
 <tr>
 <td style="text-align:left;">
 Ghana
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 26962563
@@ -3005,6 +3221,9 @@ Ghana
 <td style="text-align:left;">
 Côte d’Ivoire
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 22531350
 </td>
@@ -3018,6 +3237,9 @@ Côte d’Ivoire
 <tr>
 <td style="text-align:left;">
 Guinea
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 11805509
@@ -3033,6 +3255,9 @@ Guinea
 <td style="text-align:left;">
 Guinea-Bissau
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 1725744
 </td>
@@ -3046,6 +3271,9 @@ Guinea-Bissau
 <tr>
 <td style="text-align:left;">
 Liberia
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 4390737
@@ -3061,6 +3289,9 @@ Liberia
 <td style="text-align:left;">
 Sierra Leone
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 7079162
 </td>
@@ -3074,6 +3305,9 @@ Sierra Leone
 <tr>
 <td style="text-align:left;">
 Burkina Faso
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 17585977
@@ -3089,6 +3323,9 @@ Burkina Faso
 <td style="text-align:left;">
 Central African Republic
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 4515392
 </td>
@@ -3102,6 +3339,9 @@ Central African Republic
 <tr>
 <td style="text-align:left;">
 Republic of the Congo
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 4871101
@@ -3117,6 +3357,9 @@ Republic of the Congo
 <td style="text-align:left;">
 Gabon
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 1875713
 </td>
@@ -3130,6 +3373,9 @@ Gabon
 <tr>
 <td style="text-align:left;">
 Equatorial Guinea
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 1129424
@@ -3145,6 +3391,9 @@ Equatorial Guinea
 <td style="text-align:left;">
 Zambia
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 15620974
 </td>
@@ -3158,6 +3407,9 @@ Zambia
 <tr>
 <td style="text-align:left;">
 Malawi
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 17068838
@@ -3173,6 +3425,9 @@ Malawi
 <td style="text-align:left;">
 Mozambique
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 27212382
 </td>
@@ -3186,6 +3441,9 @@ Mozambique
 <tr>
 <td style="text-align:left;">
 eSwatini
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 1295097
@@ -3201,6 +3459,9 @@ eSwatini
 <td style="text-align:left;">
 Angola
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 26920466
 </td>
@@ -3214,6 +3475,9 @@ Angola
 <tr>
 <td style="text-align:left;">
 Burundi
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 9891790
@@ -3229,6 +3493,9 @@ Burundi
 <td style="text-align:left;">
 Israel
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 8215700
 </td>
@@ -3242,6 +3509,9 @@ Israel
 <tr>
 <td style="text-align:left;">
 Lebanon
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 5603279
@@ -3257,6 +3527,9 @@ Lebanon
 <td style="text-align:left;">
 Madagascar
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 23589801
 </td>
@@ -3270,6 +3543,9 @@ Madagascar
 <tr>
 <td style="text-align:left;">
 Palestine
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 4294682
@@ -3285,6 +3561,9 @@ Palestine
 <td style="text-align:left;">
 The Gambia
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 1917852
 </td>
@@ -3298,6 +3577,9 @@ The Gambia
 <tr>
 <td style="text-align:left;">
 Tunisia
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 11143908
@@ -3313,6 +3595,9 @@ Tunisia
 <td style="text-align:left;">
 Algeria
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 39113313
 </td>
@@ -3326,6 +3611,9 @@ Algeria
 <tr>
 <td style="text-align:left;">
 Jordan
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 8809306
@@ -3341,6 +3629,9 @@ Jordan
 <td style="text-align:left;">
 United Arab Emirates
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 9070867
 </td>
@@ -3354,6 +3645,9 @@ United Arab Emirates
 <tr>
 <td style="text-align:left;">
 Qatar
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 2374419
@@ -3369,6 +3663,9 @@ Qatar
 <td style="text-align:left;">
 Kuwait
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 3782450
 </td>
@@ -3382,6 +3679,9 @@ Kuwait
 <tr>
 <td style="text-align:left;">
 Iraq
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 35006080
@@ -3397,6 +3697,9 @@ Iraq
 <td style="text-align:left;">
 Oman
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 3960925
 </td>
@@ -3410,6 +3713,9 @@ Oman
 <tr>
 <td style="text-align:left;">
 Vanuatu
+</td>
+<td style="text-align:left;">
+Oceania
 </td>
 <td style="text-align:right;">
 258850
@@ -3425,6 +3731,9 @@ Vanuatu
 <td style="text-align:left;">
 Cambodia
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 15270790
 </td>
@@ -3438,6 +3747,9 @@ Cambodia
 <tr>
 <td style="text-align:left;">
 Thailand
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 68416772
@@ -3453,6 +3765,9 @@ Thailand
 <td style="text-align:left;">
 Lao PDR
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 6576397
 </td>
@@ -3466,6 +3781,9 @@ Lao PDR
 <tr>
 <td style="text-align:left;">
 Myanmar
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 51924182
@@ -3481,6 +3799,9 @@ Myanmar
 <td style="text-align:left;">
 Vietnam
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 92544915
 </td>
@@ -3494,6 +3815,9 @@ Vietnam
 <tr>
 <td style="text-align:left;">
 Dem. Rep. Korea
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 25116363
@@ -3509,6 +3833,9 @@ NA
 <td style="text-align:left;">
 Republic of Korea
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 50746659
 </td>
@@ -3522,6 +3849,9 @@ Republic of Korea
 <tr>
 <td style="text-align:left;">
 Mongolia
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 2923896
@@ -3537,6 +3867,9 @@ Mongolia
 <td style="text-align:left;">
 India
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 1293859294
 </td>
@@ -3550,6 +3883,9 @@ India
 <tr>
 <td style="text-align:left;">
 Bangladesh
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 159405279
@@ -3565,6 +3901,9 @@ Bangladesh
 <td style="text-align:left;">
 Bhutan
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 776448
 </td>
@@ -3578,6 +3917,9 @@ Bhutan
 <tr>
 <td style="text-align:left;">
 Nepal
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 28323241
@@ -3593,6 +3935,9 @@ Nepal
 <td style="text-align:left;">
 Pakistan
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 185546257
 </td>
@@ -3606,6 +3951,9 @@ Pakistan
 <tr>
 <td style="text-align:left;">
 Afghanistan
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 32758020
@@ -3621,6 +3969,9 @@ Afghanistan
 <td style="text-align:left;">
 Tajikistan
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 8362745
 </td>
@@ -3634,6 +3985,9 @@ Tajikistan
 <tr>
 <td style="text-align:left;">
 Kyrgyzstan
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 5835500
@@ -3649,6 +4003,9 @@ Kyrgyzstan
 <td style="text-align:left;">
 Turkmenistan
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 5466241
 </td>
@@ -3662,6 +4019,9 @@ Turkmenistan
 <tr>
 <td style="text-align:left;">
 Iran
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 78411092
@@ -3677,6 +4037,9 @@ Iran
 <td style="text-align:left;">
 Syria
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 19203090
 </td>
@@ -3690,6 +4053,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Armenia
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 2906220
@@ -3705,6 +4071,9 @@ Armenia
 <td style="text-align:left;">
 Sweden
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 9696110
 </td>
@@ -3718,6 +4087,9 @@ Sweden
 <tr>
 <td style="text-align:left;">
 Belarus
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 9474511
@@ -3733,6 +4105,9 @@ Belarus
 <td style="text-align:left;">
 Ukraine
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 45271947
 </td>
@@ -3746,6 +4121,9 @@ Ukraine
 <tr>
 <td style="text-align:left;">
 Poland
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 38011735
@@ -3761,6 +4139,9 @@ Poland
 <td style="text-align:left;">
 Austria
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 8546356
 </td>
@@ -3774,6 +4155,9 @@ Austria
 <tr>
 <td style="text-align:left;">
 Hungary
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 9866468
@@ -3789,6 +4173,9 @@ Hungary
 <td style="text-align:left;">
 Moldova
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 3556397
 </td>
@@ -3802,6 +4189,9 @@ Moldova
 <tr>
 <td style="text-align:left;">
 Romania
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 19908979
@@ -3817,6 +4207,9 @@ Romania
 <td style="text-align:left;">
 Lithuania
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 2932367
 </td>
@@ -3830,6 +4223,9 @@ Lithuania
 <tr>
 <td style="text-align:left;">
 Latvia
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 1993782
@@ -3845,6 +4241,9 @@ Latvia
 <td style="text-align:left;">
 Estonia
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 1314545
 </td>
@@ -3858,6 +4257,9 @@ Estonia
 <tr>
 <td style="text-align:left;">
 Germany
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 80982500
@@ -3873,6 +4275,9 @@ Germany
 <td style="text-align:left;">
 Bulgaria
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 7223938
 </td>
@@ -3886,6 +4291,9 @@ Bulgaria
 <tr>
 <td style="text-align:left;">
 Greece
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 10892413
@@ -3901,6 +4309,9 @@ Greece
 <td style="text-align:left;">
 Turkey
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 77030628
 </td>
@@ -3914,6 +4325,9 @@ Turkey
 <tr>
 <td style="text-align:left;">
 Albania
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 2889104
@@ -3929,6 +4343,9 @@ Albania
 <td style="text-align:left;">
 Croatia
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 4238389
 </td>
@@ -3942,6 +4359,9 @@ Croatia
 <tr>
 <td style="text-align:left;">
 Switzerland
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 8188649
@@ -3957,6 +4377,9 @@ Switzerland
 <td style="text-align:left;">
 Luxembourg
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 556319
 </td>
@@ -3970,6 +4393,9 @@ Luxembourg
 <tr>
 <td style="text-align:left;">
 Belgium
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 11209057
@@ -3985,6 +4411,9 @@ Belgium
 <td style="text-align:left;">
 Netherlands
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 16865008
 </td>
@@ -3998,6 +4427,9 @@ Netherlands
 <tr>
 <td style="text-align:left;">
 Portugal
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 10401062
@@ -4013,6 +4445,9 @@ Portugal
 <td style="text-align:left;">
 Spain
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 46480882
 </td>
@@ -4026,6 +4461,9 @@ Spain
 <tr>
 <td style="text-align:left;">
 Ireland
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 4657740
@@ -4041,6 +4479,9 @@ Ireland
 <td style="text-align:left;">
 New Caledonia
 </td>
+<td style="text-align:left;">
+Oceania
+</td>
 <td style="text-align:right;">
 268050
 </td>
@@ -4054,6 +4495,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Solomon Islands
+</td>
+<td style="text-align:left;">
+Oceania
 </td>
 <td style="text-align:right;">
 575504
@@ -4069,6 +4513,9 @@ Solomon Islands
 <td style="text-align:left;">
 New Zealand
 </td>
+<td style="text-align:left;">
+Oceania
+</td>
 <td style="text-align:right;">
 4509700
 </td>
@@ -4082,6 +4529,9 @@ New Zealand
 <tr>
 <td style="text-align:left;">
 Australia
+</td>
+<td style="text-align:left;">
+Oceania
 </td>
 <td style="text-align:right;">
 23504138
@@ -4097,6 +4547,9 @@ Australia
 <td style="text-align:left;">
 Sri Lanka
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 20771000
 </td>
@@ -4110,6 +4563,9 @@ Sri Lanka
 <tr>
 <td style="text-align:left;">
 China
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 1364270000
@@ -4125,6 +4581,9 @@ China
 <td style="text-align:left;">
 Taiwan
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 NA
 </td>
@@ -4138,6 +4597,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Italy
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 60789140
@@ -4153,6 +4615,9 @@ Italy
 <td style="text-align:left;">
 Denmark
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 5643475
 </td>
@@ -4166,6 +4631,9 @@ Denmark
 <tr>
 <td style="text-align:left;">
 United Kingdom
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 64613160
@@ -4181,6 +4649,9 @@ United Kingdom
 <td style="text-align:left;">
 Iceland
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 327386
 </td>
@@ -4194,6 +4665,9 @@ Iceland
 <tr>
 <td style="text-align:left;">
 Azerbaijan
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 9535079
@@ -4209,6 +4683,9 @@ Azerbaijan
 <td style="text-align:left;">
 Georgia
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 3727000
 </td>
@@ -4222,6 +4699,9 @@ Georgia
 <tr>
 <td style="text-align:left;">
 Philippines
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 100102249
@@ -4237,6 +4717,9 @@ Philippines
 <td style="text-align:left;">
 Malaysia
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 30228017
 </td>
@@ -4250,6 +4733,9 @@ Malaysia
 <tr>
 <td style="text-align:left;">
 Brunei Darussalam
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 411704
@@ -4265,6 +4751,9 @@ Brunei Darussalam
 <td style="text-align:left;">
 Slovenia
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 2061980
 </td>
@@ -4278,6 +4767,9 @@ Slovenia
 <tr>
 <td style="text-align:left;">
 Finland
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 5461512
@@ -4293,6 +4785,9 @@ Finland
 <td style="text-align:left;">
 Slovakia
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 5418649
 </td>
@@ -4306,6 +4801,9 @@ Slovakia
 <tr>
 <td style="text-align:left;">
 Czech Republic
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 10525347
@@ -4321,6 +4819,9 @@ Czech Republic
 <td style="text-align:left;">
 Eritrea
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 NA
 </td>
@@ -4334,6 +4835,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Japan
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 127276000
@@ -4349,6 +4853,9 @@ Japan
 <td style="text-align:left;">
 Paraguay
 </td>
+<td style="text-align:left;">
+South America
+</td>
 <td style="text-align:right;">
 6552584
 </td>
@@ -4362,6 +4869,9 @@ Paraguay
 <tr>
 <td style="text-align:left;">
 Yemen
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 26246327
@@ -4377,6 +4887,9 @@ Yemen
 <td style="text-align:left;">
 Saudi Arabia
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 30776722
 </td>
@@ -4388,6 +4901,9 @@ Saudi Arabia
 </td>
 </tr>
 <tr>
+<td style="text-align:left;">
+Antarctica
+</td>
 <td style="text-align:left;">
 Antarctica
 </td>
@@ -4405,6 +4921,9 @@ NA
 <td style="text-align:left;">
 Northern Cyprus
 </td>
+<td style="text-align:left;">
+Asia
+</td>
 <td style="text-align:right;">
 NA
 </td>
@@ -4418,6 +4937,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Cyprus
+</td>
+<td style="text-align:left;">
+Asia
 </td>
 <td style="text-align:right;">
 1152309
@@ -4433,6 +4955,9 @@ Cyprus
 <td style="text-align:left;">
 Morocco
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 34318082
 </td>
@@ -4446,6 +4971,9 @@ Morocco
 <tr>
 <td style="text-align:left;">
 Egypt
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 91812566
@@ -4461,6 +4989,9 @@ Egypt
 <td style="text-align:left;">
 Libya
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 6204108
 </td>
@@ -4474,6 +5005,9 @@ Libya
 <tr>
 <td style="text-align:left;">
 Ethiopia
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 97366774
@@ -4489,6 +5023,9 @@ Ethiopia
 <td style="text-align:left;">
 Djibouti
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 912164
 </td>
@@ -4502,6 +5039,9 @@ NA
 <tr>
 <td style="text-align:left;">
 Somaliland
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 NA
@@ -4517,6 +5057,9 @@ NA
 <td style="text-align:left;">
 Uganda
 </td>
+<td style="text-align:left;">
+Africa
+</td>
 <td style="text-align:right;">
 38833338
 </td>
@@ -4530,6 +5073,9 @@ Uganda
 <tr>
 <td style="text-align:left;">
 Rwanda
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 11345357
@@ -4545,6 +5091,9 @@ Rwanda
 <td style="text-align:left;">
 Bosnia and Herzegovina
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 3566002
 </td>
@@ -4558,6 +5107,9 @@ Bosnia and Herzegovina
 <tr>
 <td style="text-align:left;">
 Macedonia
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 2077495
@@ -4573,6 +5125,9 @@ Macedonia
 <td style="text-align:left;">
 Serbia
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 7130576
 </td>
@@ -4586,6 +5141,9 @@ Serbia
 <tr>
 <td style="text-align:left;">
 Montenegro
+</td>
+<td style="text-align:left;">
+Europe
 </td>
 <td style="text-align:right;">
 621810
@@ -4601,6 +5159,9 @@ Montenegro
 <td style="text-align:left;">
 Kosovo
 </td>
+<td style="text-align:left;">
+Europe
+</td>
 <td style="text-align:right;">
 1821800
 </td>
@@ -4615,6 +5176,9 @@ Kosovo
 <td style="text-align:left;">
 Trinidad and Tobago
 </td>
+<td style="text-align:left;">
+North America
+</td>
 <td style="text-align:right;">
 1354493
 </td>
@@ -4628,6 +5192,9 @@ Trinidad and Tobago
 <tr>
 <td style="text-align:left;">
 South Sudan
+</td>
+<td style="text-align:left;">
+Africa
 </td>
 <td style="text-align:right;">
 11530971

@@ -81,11 +81,11 @@ NOTA: recuerde que también puede explorar los datos con funciones como ```str()
 kable(world[1:10, 1:8], caption="Datos demográficos de los países del mundo")
 ```
 
-3. (5%) Mediante la función ```kable()```, despliegue en una tabla las diez primeras observaciones y las variables correspondientes a nombre del país, población, esperanza de vida y de renta per cápita del data frame  ```world```. Despliegue los nombres de las columnas en español.
+3. (5%) Mediante la función ```kable()```, despliegue en una tabla las diez primeras observaciones y las variables correspondientes a nombre del país, continente, población, esperanza de vida y de renta per cápita del data frame  ```world```. Despliegue los nombres de las columnas en español.
 ```{r}
 kable(
-  world[1:10, c("name_long", "pop", "lifeExp", "gdpPercap")], 
-  col.names = c("País", "Población", "Esperanza de vida", "Renta per cápita"),
+  world[1:10, c("name_long", "continent", "pop", "lifeExp", "gdpPercap")], 
+  col.names = c("País", "Continente", "Población", "Esperanza de vida", "Renta per cápita"),
   caption="Datos demográficos de los países del mundo"
   )
 ```
@@ -93,11 +93,11 @@ kable(
 4.
 ```{r}
 kable(
-  world[, c("name_long", "pop", "lifeExp", "gdpPercap")], 
-  col.names = c("País", "Población", "Esperanza de vida", "Renta per cápita"),
+  world[, c("name_long", "continent", "pop", "lifeExp", "gdpPercap")], 
+  col.names = c("País", "Continente", "Población", "Esperanza de vida", "Renta per cápita"),
   caption="Datos demográficos de los países del mundo"
   ) %>%
 kable_styling() %>%
-scroll_box(width = "1000px", height = "500px", fixed_thead = TRUE)
+scroll_box(width = "800px", height = "500px", fixed_thead = TRUE)
 ```
 Note el uso del operador ```%>%```, llamado _pipe_ (tubo), para transmitir datos entre funciones.
