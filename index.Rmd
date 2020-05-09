@@ -24,6 +24,10 @@ La fecha límite de entrega de este laboratorio es el **lunes 18 de mayo de 2020
 ## Objetivos
 1. Aplicar comandos de graficación del paquete [ggplot2](https://ggplot2.tidyverse.org/) de R.
 2. Aplicar comandos de manejo de datos geoespaciales vectoriales del paquete [sf](https://cran.r-project.org/web/packages/sf/) de R.
+3. Generar documentos en R Markdown con tres tipos de visualizaciones de datos:
+  - Tablas.
+  - Gráficos.
+  - Mapas.
 
 ## Trabajo previo
 Se recomienda leer el material preparado por el profesor y consultar los recursos listados en:
@@ -38,12 +42,13 @@ Ejecute los siguientes pasos para bifurcar a su cuenta en GitHub el repositorio 
 1. Bifurque (_fork_) el repositorio [https://github.com/geoprocesamiento-2020i/laboratorio-03-r-datos-vectoriales-1](https://github.com/geoprocesamiento-2020i/laboratorio-03-r-datos-vectoriales-1) a su cuenta personal en GitHub.
 2. En el apartado _Settings_ del repositorio bifurcado a su cuenta, busque la sección _GitHub Pages_ y habilítela al seleccionar _master branch_ como fuente. Tome nota de la dirección web resultante (ej. https://usuario.github.io/laboratorio-03-r-datos-vectoriales-1/).
 3. En RStudio, clone el repositorio de su cuenta personal con la opción de menú _File - New Project - Version Control - Git_. En _Repository URL_ escriba la dirección de su repositorio (ej. https://usuario.github.io/laboratorio-03-r-datos-vectoriales-1.git). Puede obtener esta dirección con el botón _Clone or download_, en la página principal del mismo repositorio.
-4. Abra y modifique el documento en R Studio.
-5. Cada vez que desee actualizar su documento en GitHub y GitHub Pages:
-- Presione el botón _Knit_ en RStudio para generar el documento correspondiente en la sintaxis HTML.
-- Suba a su repositorio en GitHub, los archivos _index.Rmd_ e _index.html_, ya sea mediante la interfaz de GitHub o mediante los comandos de [Git](https://git-scm.com/) explicados en el [tutorial](https://geoprocesamiento-2020i.github.io/tutorial-git/).
+4. En R Studio, abra el documento _index.Rmd_ y desarrolle los ejercicios del laboratorio. Cada vez que desee actualizar su documento en GitHub y GitHub Pages:
+  - Presione el botón _Knit_ en RStudio para generar el archivo correspondiente en la sintaxis HTML.
+  - Suba a su repositorio en GitHub, los archivos _index.Rmd_ e _index.html_, ya sea mediante la interfaz de GitHub o mediante los comandos de [Git](https://git-scm.com/) explicados en el [tutorial](https://geoprocesamiento-2020i.github.io/tutorial-git/).
 
 ## Desarrollo
+En los siguientes ejercicios se utiliza el data frame ```world```, contenido en el paquete [spData](https://cran.r-project.org/web/packages/spData/).
+
 0. Carga de paquetes:
 ```{r}
 # Paquete para generación de documentos (ej. HTML)
@@ -61,9 +66,22 @@ library(spData)
 
 Realice los siguientes ejercicios de graficación y manejo de datos vectoriales en R (el valor porcentual de cada uno se muestra entre paréntesis).
 
-1. (10%) Mediante la función ```kable()``` del paquete [knitr](https://cran.r-project.org/web/packages/knitr/), despliegue en una tabla las tres primeras observaciones (i.e. filas, registros) y las tres primeras variables (i.e. columnas) del data frame  ```world``` (contenido en el paquete [spData](https://cran.r-project.org/web/packages/spData/)).
-
+1. (5%) Mediante la función ```names()```, observe las columnas que componen el data frame ```world```.
 ```{r}
-kable(world[1:3, 1:3], caption="Países")
+names(world)
+```
+NOTA: recuerde que también puede explorar los datos con funciones como ```str()```, ```summary()``` y ```View()```.
+
+2. (5%) Mediante la función ```kable()``` del paquete [knitr](https://cran.r-project.org/web/packages/knitr/), despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las ocho primeras variables (i.e. columnas) del data frame  ```world```.
+```{r}
+kable(world[1:10, 1:8], caption="Países del mundo")
 ```
 
+3. (5%) Mediante la función ```kable()```, despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las variables correspondientes a nombre del país, población, esperanza de vida y de renta per cápita del data frame  ```world```.
+```{r}
+kable(
+  world[1:10, c("name_long", "pop", "lifeExp", "gdpPercap")], 
+  col.names = c("País", "Población", "Esperanza de vida", "Renta per cápita"),
+  caption="Países del mundo"
+  )
+```
