@@ -22,9 +22,10 @@ En este laboratorio, aplicará varios comandos de graficación y de manejo de da
 La fecha límite de entrega de este laboratorio es el **lunes 18 de mayo de 2020**. Debe enviarle al profesor por correo electrónico la dirección del sitio en GitHub Pages resultante.
 
 ## Objetivos
-1. Aplicar comandos de graficación del paquete [ggplot2](https://ggplot2.tidyverse.org/) de R.
-2. Aplicar comandos de manejo de datos geoespaciales vectoriales del paquete [sf](https://cran.r-project.org/web/packages/sf/) de R.
-3. Generar documentos en R Markdown con tres tipos de visualizaciones de datos:
+1. Aplicar comandos de formateo de tablas de los paquetes [knitr](https://cran.r-project.org/web/packages/knitr/) y [kableExtra](https://cran.r-project.org/web/packages/kableExtra/) de R.
+2. Aplicar comandos de graficación del paquete [ggplot2](https://ggplot2.tidyverse.org/) de R.
+3. Aplicar comandos de manejo de datos geoespaciales vectoriales del paquete [sf](https://cran.r-project.org/web/packages/sf/) de R.
+4. Generar documentos en R Markdown con tres tipos de visualizaciones de datos:
   - Tablas.
   - Gráficos.
   - Mapas.
@@ -53,6 +54,9 @@ En los siguientes ejercicios se utiliza el data frame ```world```, contenido en 
 ```{r}
 # Paquete para generación de documentos (ej. HTML)
 library(knitr)
+
+# Paquete para formateo de tablas
+library(kableExtra)
 
 # Paquete de graficación
 library(ggplot2)
@@ -85,3 +89,14 @@ kable(
   caption="Datos demográficos de los países del mundo"
   )
 ```
+
+4.
+```{r}
+kable(
+  world[1:10, c("name_long", "pop", "lifeExp", "gdpPercap")], 
+  col.names = c("País", "Población", "Esperanza de vida", "Renta per cápita"),
+  caption="Datos demográficos de los países del mundo"
+  ) %>%
+kable_styling(fixed_thead = TRUE)
+```
+Note el uso del operador ```%>%```, llamado _pipe_ (tubo), para transmitir datos entre funciones.
