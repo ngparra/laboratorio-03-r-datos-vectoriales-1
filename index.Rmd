@@ -93,10 +93,11 @@ kable(
 4.
 ```{r}
 kable(
-  world[1:10, c("name_long", "pop", "lifeExp", "gdpPercap")], 
+  world[, c("name_long", "pop", "lifeExp", "gdpPercap")], 
   col.names = c("País", "Población", "Esperanza de vida", "Renta per cápita"),
   caption="Datos demográficos de los países del mundo"
   ) %>%
-kable_styling(fixed_thead = TRUE)
+kable_styling() %>%
+scroll_box(width = "1000px", height = "500px", fixed_thead = TRUE)
 ```
 Note el uso del operador ```%>%```, llamado _pipe_ (tubo), para transmitir datos entre funciones.

@@ -2133,11 +2133,13 @@ Argentina
 <li></li>
 </ol>
 <pre class="r"><code>kable(
-  world[1:10, c(&quot;name_long&quot;, &quot;pop&quot;, &quot;lifeExp&quot;, &quot;gdpPercap&quot;)], 
+  world[, c(&quot;name_long&quot;, &quot;pop&quot;, &quot;lifeExp&quot;, &quot;gdpPercap&quot;)], 
   col.names = c(&quot;País&quot;, &quot;Población&quot;, &quot;Esperanza de vida&quot;, &quot;Renta per cápita&quot;),
   caption=&quot;Datos demográficos de los países del mundo&quot;
   ) %&gt;%
-kable_styling(fixed_thead = TRUE)</code></pre>
+kable_styling() %&gt;%
+scroll_box(width = &quot;1000px&quot;, height = &quot;500px&quot;, fixed_thead = TRUE)</code></pre>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:1000px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 Datos demográficos de los países del mundo
@@ -2170,7 +2172,7 @@ Fiji
 69.96000
 </td>
 <td style="text-align:right;">
-8222.254
+8222.2538
 </td>
 </tr>
 <tr>
@@ -2184,7 +2186,7 @@ Tanzania
 64.16300
 </td>
 <td style="text-align:right;">
-2402.099
+2402.0994
 </td>
 </tr>
 <tr>
@@ -2212,7 +2214,7 @@ Canada
 81.95305
 </td>
 <td style="text-align:right;">
-43079.143
+43079.1425
 </td>
 </tr>
 <tr>
@@ -2226,7 +2228,7 @@ United States
 78.84146
 </td>
 <td style="text-align:right;">
-51921.985
+51921.9846
 </td>
 </tr>
 <tr>
@@ -2240,7 +2242,7 @@ Kazakhstan
 71.62000
 </td>
 <td style="text-align:right;">
-23587.338
+23587.3375
 </td>
 </tr>
 <tr>
@@ -2254,7 +2256,7 @@ Uzbekistan
 71.03900
 </td>
 <td style="text-align:right;">
-5370.866
+5370.8658
 </td>
 </tr>
 <tr>
@@ -2268,7 +2270,7 @@ Papua New Guinea
 65.23000
 </td>
 <td style="text-align:right;">
-3709.082
+3709.0816
 </td>
 </tr>
 <tr>
@@ -2282,7 +2284,7 @@ Indonesia
 68.85600
 </td>
 <td style="text-align:right;">
-10003.089
+10003.0890
 </td>
 </tr>
 <tr>
@@ -2296,11 +2298,2350 @@ Argentina
 76.25200
 </td>
 <td style="text-align:right;">
-18797.548
+18797.5479
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chile
+</td>
+<td style="text-align:right;">
+17613798
+</td>
+<td style="text-align:right;">
+79.11700
+</td>
+<td style="text-align:right;">
+22195.2744
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Democratic Republic of the Congo
+</td>
+<td style="text-align:right;">
+73722860
+</td>
+<td style="text-align:right;">
+58.78200
+</td>
+<td style="text-align:right;">
+785.3473
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Somalia
+</td>
+<td style="text-align:right;">
+13513125
+</td>
+<td style="text-align:right;">
+55.46700
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kenya
+</td>
+<td style="text-align:right;">
+46024250
+</td>
+<td style="text-align:right;">
+66.24200
+</td>
+<td style="text-align:right;">
+2753.2361
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sudan
+</td>
+<td style="text-align:right;">
+37737913
+</td>
+<td style="text-align:right;">
+64.00200
+</td>
+<td style="text-align:right;">
+4188.3348
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chad
+</td>
+<td style="text-align:right;">
+13569438
+</td>
+<td style="text-align:right;">
+52.20400
+</td>
+<td style="text-align:right;">
+2076.6500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Haiti
+</td>
+<td style="text-align:right;">
+10572466
+</td>
+<td style="text-align:right;">
+62.75700
+</td>
+<td style="text-align:right;">
+1652.8548
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dominican Republic
+</td>
+<td style="text-align:right;">
+10405844
+</td>
+<td style="text-align:right;">
+73.48300
+</td>
+<td style="text-align:right;">
+12663.0422
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Russian Federation
+</td>
+<td style="text-align:right;">
+143819666
+</td>
+<td style="text-align:right;">
+70.74366
+</td>
+<td style="text-align:right;">
+25284.5862
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bahamas
+</td>
+<td style="text-align:right;">
+382169
+</td>
+<td style="text-align:right;">
+75.37900
+</td>
+<td style="text-align:right;">
+28456.8165
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Falkland Islands
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Norway
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Greenland
+</td>
+<td style="text-align:right;">
+56295
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+French Southern and Antarctic Lands
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Timor-Leste
+</td>
+<td style="text-align:right;">
+1212814
+</td>
+<td style="text-align:right;">
+68.28500
+</td>
+<td style="text-align:right;">
+6262.9055
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+South Africa
+</td>
+<td style="text-align:right;">
+54539571
+</td>
+<td style="text-align:right;">
+60.99300
+</td>
+<td style="text-align:right;">
+12389.7147
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lesotho
+</td>
+<td style="text-align:right;">
+2145785
+</td>
+<td style="text-align:right;">
+53.26800
+</td>
+<td style="text-align:right;">
+2677.1981
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mexico
+</td>
+<td style="text-align:right;">
+124221600
+</td>
+<td style="text-align:right;">
+76.75300
+</td>
+<td style="text-align:right;">
+16622.5970
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Uruguay
+</td>
+<td style="text-align:right;">
+3419546
+</td>
+<td style="text-align:right;">
+77.19000
+</td>
+<td style="text-align:right;">
+19827.5650
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Brazil
+</td>
+<td style="text-align:right;">
+204213133
+</td>
+<td style="text-align:right;">
+75.04200
+</td>
+<td style="text-align:right;">
+15374.2615
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bolivia
+</td>
+<td style="text-align:right;">
+10562159
+</td>
+<td style="text-align:right;">
+68.35700
+</td>
+<td style="text-align:right;">
+6324.8273
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Peru
+</td>
+<td style="text-align:right;">
+30973354
+</td>
+<td style="text-align:right;">
+74.51800
+</td>
+<td style="text-align:right;">
+11547.8342
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Colombia
+</td>
+<td style="text-align:right;">
+47791911
+</td>
+<td style="text-align:right;">
+74.02200
+</td>
+<td style="text-align:right;">
+12715.9674
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Panama
+</td>
+<td style="text-align:right;">
+3903986
+</td>
+<td style="text-align:right;">
+77.61000
+</td>
+<td style="text-align:right;">
+20017.9944
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Costa Rica
+</td>
+<td style="text-align:right;">
+4757575
+</td>
+<td style="text-align:right;">
+79.44000
+</td>
+<td style="text-align:right;">
+14372.4008
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nicaragua
+</td>
+<td style="text-align:right;">
+6013997
+</td>
+<td style="text-align:right;">
+74.88400
+</td>
+<td style="text-align:right;">
+4784.8305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Honduras
+</td>
+<td style="text-align:right;">
+8809216
+</td>
+<td style="text-align:right;">
+73.18100
+</td>
+<td style="text-align:right;">
+4231.3251
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+El Salvador
+</td>
+<td style="text-align:right;">
+6281189
+</td>
+<td style="text-align:right;">
+73.01500
+</td>
+<td style="text-align:right;">
+6890.7232
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guatemala
+</td>
+<td style="text-align:right;">
+15923559
+</td>
+<td style="text-align:right;">
+72.86900
+</td>
+<td style="text-align:right;">
+7147.4292
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Belize
+</td>
+<td style="text-align:right;">
+351694
+</td>
+<td style="text-align:right;">
+70.02700
+</td>
+<td style="text-align:right;">
+7999.5737
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Venezuela
+</td>
+<td style="text-align:right;">
+30738378
+</td>
+<td style="text-align:right;">
+74.19600
+</td>
+<td style="text-align:right;">
+16745.0220
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guyana
+</td>
+<td style="text-align:right;">
+763393
+</td>
+<td style="text-align:right;">
+66.42500
+</td>
+<td style="text-align:right;">
+6906.0123
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Suriname
+</td>
+<td style="text-align:right;">
+547928
+</td>
+<td style="text-align:right;">
+71.13800
+</td>
+<td style="text-align:right;">
+15306.6924
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+France
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ecuador
+</td>
+<td style="text-align:right;">
+15903112
+</td>
+<td style="text-align:right;">
+75.87900
+</td>
+<td style="text-align:right;">
+10901.4186
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Puerto Rico
+</td>
+<td style="text-align:right;">
+3534874
+</td>
+<td style="text-align:right;">
+79.39012
+</td>
+<td style="text-align:right;">
+35066.0464
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jamaica
+</td>
+<td style="text-align:right;">
+2862087
+</td>
+<td style="text-align:right;">
+75.68900
+</td>
+<td style="text-align:right;">
+8051.2440
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cuba
+</td>
+<td style="text-align:right;">
+11439767
+</td>
+<td style="text-align:right;">
+79.41500
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zimbabwe
+</td>
+<td style="text-align:right;">
+15411675
+</td>
+<td style="text-align:right;">
+59.36000
+</td>
+<td style="text-align:right;">
+1925.1387
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Botswana
+</td>
+<td style="text-align:right;">
+2168573
+</td>
+<td style="text-align:right;">
+64.78000
+</td>
+<td style="text-align:right;">
+15914.6702
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Namibia
+</td>
+<td style="text-align:right;">
+2370992
+</td>
+<td style="text-align:right;">
+62.98100
+</td>
+<td style="text-align:right;">
+9617.3970
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Senegal
+</td>
+<td style="text-align:right;">
+14546111
+</td>
+<td style="text-align:right;">
+66.37600
+</td>
+<td style="text-align:right;">
+2218.5519
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mali
+</td>
+<td style="text-align:right;">
+16962846
+</td>
+<td style="text-align:right;">
+57.00700
+</td>
+<td style="text-align:right;">
+1865.1606
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mauritania
+</td>
+<td style="text-align:right;">
+4063920
+</td>
+<td style="text-align:right;">
+62.90700
+</td>
+<td style="text-align:right;">
+3655.3885
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Benin
+</td>
+<td style="text-align:right;">
+10286712
+</td>
+<td style="text-align:right;">
+60.37300
+</td>
+<td style="text-align:right;">
+2001.0773
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Niger
+</td>
+<td style="text-align:right;">
+19148219
+</td>
+<td style="text-align:right;">
+59.22800
+</td>
+<td style="text-align:right;">
+904.4567
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nigeria
+</td>
+<td style="text-align:right;">
+176460502
+</td>
+<td style="text-align:right;">
+52.54900
+</td>
+<td style="text-align:right;">
+5671.9006
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cameroon
+</td>
+<td style="text-align:right;">
+22239904
+</td>
+<td style="text-align:right;">
+57.11100
+</td>
+<td style="text-align:right;">
+3196.3615
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Togo
+</td>
+<td style="text-align:right;">
+7228915
+</td>
+<td style="text-align:right;">
+59.60100
+</td>
+<td style="text-align:right;">
+1315.3403
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ghana
+</td>
+<td style="text-align:right;">
+26962563
+</td>
+<td style="text-align:right;">
+62.15400
+</td>
+<td style="text-align:right;">
+3868.6009
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Côte d’Ivoire
+</td>
+<td style="text-align:right;">
+22531350
+</td>
+<td style="text-align:right;">
+52.52000
+</td>
+<td style="text-align:right;">
+3054.5349
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guinea
+</td>
+<td style="text-align:right;">
+11805509
+</td>
+<td style="text-align:right;">
+58.84600
+</td>
+<td style="text-align:right;">
+1734.7367
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Guinea-Bissau
+</td>
+<td style="text-align:right;">
+1725744
+</td>
+<td style="text-align:right;">
+56.59800
+</td>
+<td style="text-align:right;">
+1398.2548
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Liberia
+</td>
+<td style="text-align:right;">
+4390737
+</td>
+<td style="text-align:right;">
+61.52700
+</td>
+<td style="text-align:right;">
+804.7199
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sierra Leone
+</td>
+<td style="text-align:right;">
+7079162
+</td>
+<td style="text-align:right;">
+50.95100
+</td>
+<td style="text-align:right;">
+1692.1421
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Burkina Faso
+</td>
+<td style="text-align:right;">
+17585977
+</td>
+<td style="text-align:right;">
+59.45700
+</td>
+<td style="text-align:right;">
+1582.3337
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Central African Republic
+</td>
+<td style="text-align:right;">
+4515392
+</td>
+<td style="text-align:right;">
+50.62100
+</td>
+<td style="text-align:right;">
+597.1352
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Republic of the Congo
+</td>
+<td style="text-align:right;">
+4871101
+</td>
+<td style="text-align:right;">
+63.53600
+</td>
+<td style="text-align:right;">
+5538.0529
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Gabon
+</td>
+<td style="text-align:right;">
+1875713
+</td>
+<td style="text-align:right;">
+65.21100
+</td>
+<td style="text-align:right;">
+16678.6381
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Equatorial Guinea
+</td>
+<td style="text-align:right;">
+1129424
+</td>
+<td style="text-align:right;">
+57.18000
+</td>
+<td style="text-align:right;">
+31542.5108
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Zambia
+</td>
+<td style="text-align:right;">
+15620974
+</td>
+<td style="text-align:right;">
+60.77500
+</td>
+<td style="text-align:right;">
+3632.5038
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Malawi
+</td>
+<td style="text-align:right;">
+17068838
+</td>
+<td style="text-align:right;">
+61.93200
+</td>
+<td style="text-align:right;">
+1090.3672
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mozambique
+</td>
+<td style="text-align:right;">
+27212382
+</td>
+<td style="text-align:right;">
+57.09900
+</td>
+<td style="text-align:right;">
+1079.8239
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+eSwatini
+</td>
+<td style="text-align:right;">
+1295097
+</td>
+<td style="text-align:right;">
+56.28700
+</td>
+<td style="text-align:right;">
+7870.9707
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Angola
+</td>
+<td style="text-align:right;">
+26920466
+</td>
+<td style="text-align:right;">
+60.85800
+</td>
+<td style="text-align:right;">
+6257.1529
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Burundi
+</td>
+<td style="text-align:right;">
+9891790
+</td>
+<td style="text-align:right;">
+56.68800
+</td>
+<td style="text-align:right;">
+803.1728
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Israel
+</td>
+<td style="text-align:right;">
+8215700
+</td>
+<td style="text-align:right;">
+82.15366
+</td>
+<td style="text-align:right;">
+31702.0835
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lebanon
+</td>
+<td style="text-align:right;">
+5603279
+</td>
+<td style="text-align:right;">
+79.23100
+</td>
+<td style="text-align:right;">
+13831.3752
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Madagascar
+</td>
+<td style="text-align:right;">
+23589801
+</td>
+<td style="text-align:right;">
+65.13300
+</td>
+<td style="text-align:right;">
+1372.0210
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Palestine
+</td>
+<td style="text-align:right;">
+4294682
+</td>
+<td style="text-align:right;">
+73.12600
+</td>
+<td style="text-align:right;">
+4319.5283
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+The Gambia
+</td>
+<td style="text-align:right;">
+1917852
+</td>
+<td style="text-align:right;">
+60.70700
+</td>
+<td style="text-align:right;">
+1550.2184
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tunisia
+</td>
+<td style="text-align:right;">
+11143908
+</td>
+<td style="text-align:right;">
+75.33500
+</td>
+<td style="text-align:right;">
+10767.0277
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Algeria
+</td>
+<td style="text-align:right;">
+39113313
+</td>
+<td style="text-align:right;">
+75.64100
+</td>
+<td style="text-align:right;">
+13483.3379
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jordan
+</td>
+<td style="text-align:right;">
+8809306
+</td>
+<td style="text-align:right;">
+74.03400
+</td>
+<td style="text-align:right;">
+8622.1855
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+United Arab Emirates
+</td>
+<td style="text-align:right;">
+9070867
+</td>
+<td style="text-align:right;">
+76.94800
+</td>
+<td style="text-align:right;">
+63943.1858
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Qatar
+</td>
+<td style="text-align:right;">
+2374419
+</td>
+<td style="text-align:right;">
+77.88800
+</td>
+<td style="text-align:right;">
+120860.0676
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kuwait
+</td>
+<td style="text-align:right;">
+3782450
+</td>
+<td style="text-align:right;">
+74.45800
+</td>
+<td style="text-align:right;">
+70832.3684
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Iraq
+</td>
+<td style="text-align:right;">
+35006080
+</td>
+<td style="text-align:right;">
+69.45800
+</td>
+<td style="text-align:right;">
+14838.3829
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Oman
+</td>
+<td style="text-align:right;">
+3960925
+</td>
+<td style="text-align:right;">
+76.57800
+</td>
+<td style="text-align:right;">
+40365.2733
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vanuatu
+</td>
+<td style="text-align:right;">
+258850
+</td>
+<td style="text-align:right;">
+71.70900
+</td>
+<td style="text-align:right;">
+2892.3416
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cambodia
+</td>
+<td style="text-align:right;">
+15270790
+</td>
+<td style="text-align:right;">
+68.25100
+</td>
+<td style="text-align:right;">
+3124.3193
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thailand
+</td>
+<td style="text-align:right;">
+68416772
+</td>
+<td style="text-align:right;">
+74.89500
+</td>
+<td style="text-align:right;">
+14857.2029
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lao PDR
+</td>
+<td style="text-align:right;">
+6576397
+</td>
+<td style="text-align:right;">
+65.97500
+</td>
+<td style="text-align:right;">
+5436.4826
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Myanmar
+</td>
+<td style="text-align:right;">
+51924182
+</td>
+<td style="text-align:right;">
+66.28500
+</td>
+<td style="text-align:right;">
+4770.0121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vietnam
+</td>
+<td style="text-align:right;">
+92544915
+</td>
+<td style="text-align:right;">
+75.85500
+</td>
+<td style="text-align:right;">
+5264.8281
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dem. Rep. Korea
+</td>
+<td style="text-align:right;">
+25116363
+</td>
+<td style="text-align:right;">
+71.17900
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Republic of Korea
+</td>
+<td style="text-align:right;">
+50746659
+</td>
+<td style="text-align:right;">
+81.72195
+</td>
+<td style="text-align:right;">
+33425.6896
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mongolia
+</td>
+<td style="text-align:right;">
+2923896
+</td>
+<td style="text-align:right;">
+68.84700
+</td>
+<td style="text-align:right;">
+11348.6473
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+India
+</td>
+<td style="text-align:right;">
+1293859294
+</td>
+<td style="text-align:right;">
+68.02100
+</td>
+<td style="text-align:right;">
+5385.1418
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bangladesh
+</td>
+<td style="text-align:right;">
+159405279
+</td>
+<td style="text-align:right;">
+71.80300
+</td>
+<td style="text-align:right;">
+2973.0416
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bhutan
+</td>
+<td style="text-align:right;">
+776448
+</td>
+<td style="text-align:right;">
+69.43000
+</td>
+<td style="text-align:right;">
+7366.4241
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Nepal
+</td>
+<td style="text-align:right;">
+28323241
+</td>
+<td style="text-align:right;">
+69.51100
+</td>
+<td style="text-align:right;">
+2266.1843
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pakistan
+</td>
+<td style="text-align:right;">
+185546257
+</td>
+<td style="text-align:right;">
+66.13900
+</td>
+<td style="text-align:right;">
+4576.2270
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Afghanistan
+</td>
+<td style="text-align:right;">
+32758020
+</td>
+<td style="text-align:right;">
+62.89500
+</td>
+<td style="text-align:right;">
+1838.9602
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Tajikistan
+</td>
+<td style="text-align:right;">
+8362745
+</td>
+<td style="text-align:right;">
+70.69000
+</td>
+<td style="text-align:right;">
+2546.5005
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kyrgyzstan
+</td>
+<td style="text-align:right;">
+5835500
+</td>
+<td style="text-align:right;">
+70.40244
+</td>
+<td style="text-align:right;">
+3181.6422
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Turkmenistan
+</td>
+<td style="text-align:right;">
+5466241
+</td>
+<td style="text-align:right;">
+67.55200
+</td>
+<td style="text-align:right;">
+14332.3658
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Iran
+</td>
+<td style="text-align:right;">
+78411092
+</td>
+<td style="text-align:right;">
+75.46600
+</td>
+<td style="text-align:right;">
+16924.2007
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Syria
+</td>
+<td style="text-align:right;">
+19203090
+</td>
+<td style="text-align:right;">
+69.81700
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Armenia
+</td>
+<td style="text-align:right;">
+2906220
+</td>
+<td style="text-align:right;">
+74.25500
+</td>
+<td style="text-align:right;">
+7971.1179
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sweden
+</td>
+<td style="text-align:right;">
+9696110
+</td>
+<td style="text-align:right;">
+82.25366
+</td>
+<td style="text-align:right;">
+44167.6319
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Belarus
+</td>
+<td style="text-align:right;">
+9474511
+</td>
+<td style="text-align:right;">
+72.97073
+</td>
+<td style="text-align:right;">
+17944.2098
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ukraine
+</td>
+<td style="text-align:right;">
+45271947
+</td>
+<td style="text-align:right;">
+71.18659
+</td>
+<td style="text-align:right;">
+8243.4735
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Poland
+</td>
+<td style="text-align:right;">
+38011735
+</td>
+<td style="text-align:right;">
+77.60244
+</td>
+<td style="text-align:right;">
+24347.0737
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Austria
+</td>
+<td style="text-align:right;">
+8546356
+</td>
+<td style="text-align:right;">
+81.49024
+</td>
+<td style="text-align:right;">
+44320.5020
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hungary
+</td>
+<td style="text-align:right;">
+9866468
+</td>
+<td style="text-align:right;">
+75.76341
+</td>
+<td style="text-align:right;">
+24161.4255
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Moldova
+</td>
+<td style="text-align:right;">
+3556397
+</td>
+<td style="text-align:right;">
+71.25800
+</td>
+<td style="text-align:right;">
+4762.7809
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Romania
+</td>
+<td style="text-align:right;">
+19908979
+</td>
+<td style="text-align:right;">
+74.96098
+</td>
+<td style="text-align:right;">
+19677.5203
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lithuania
+</td>
+<td style="text-align:right;">
+2932367
+</td>
+<td style="text-align:right;">
+74.51707
+</td>
+<td style="text-align:right;">
+26258.2101
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Latvia
+</td>
+<td style="text-align:right;">
+1993782
+</td>
+<td style="text-align:right;">
+74.12439
+</td>
+<td style="text-align:right;">
+22172.2535
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Estonia
+</td>
+<td style="text-align:right;">
+1314545
+</td>
+<td style="text-align:right;">
+77.03415
+</td>
+<td style="text-align:right;">
+27113.6859
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:right;">
+80982500
+</td>
+<td style="text-align:right;">
+81.09024
+</td>
+<td style="text-align:right;">
+43560.6192
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bulgaria
+</td>
+<td style="text-align:right;">
+7223938
+</td>
+<td style="text-align:right;">
+74.46585
+</td>
+<td style="text-align:right;">
+16302.3206
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Greece
+</td>
+<td style="text-align:right;">
+10892413
+</td>
+<td style="text-align:right;">
+81.38537
+</td>
+<td style="text-align:right;">
+24081.6305
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Turkey
+</td>
+<td style="text-align:right;">
+77030628
+</td>
+<td style="text-align:right;">
+75.23900
+</td>
+<td style="text-align:right;">
+22401.8804
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Albania
+</td>
+<td style="text-align:right;">
+2889104
+</td>
+<td style="text-align:right;">
+77.96300
+</td>
+<td style="text-align:right;">
+10701.1208
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Croatia
+</td>
+<td style="text-align:right;">
+4238389
+</td>
+<td style="text-align:right;">
+77.47805
+</td>
+<td style="text-align:right;">
+20334.4465
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Switzerland
+</td>
+<td style="text-align:right;">
+8188649
+</td>
+<td style="text-align:right;">
+83.19756
+</td>
+<td style="text-align:right;">
+57218.0279
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Luxembourg
+</td>
+<td style="text-align:right;">
+556319
+</td>
+<td style="text-align:right;">
+82.22927
+</td>
+<td style="text-align:right;">
+93655.3342
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Belgium
+</td>
+<td style="text-align:right;">
+11209057
+</td>
+<td style="text-align:right;">
+81.28780
+</td>
+<td style="text-align:right;">
+41360.3956
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Netherlands
+</td>
+<td style="text-align:right;">
+16865008
+</td>
+<td style="text-align:right;">
+81.70732
+</td>
+<td style="text-align:right;">
+45668.4415
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Portugal
+</td>
+<td style="text-align:right;">
+10401062
+</td>
+<td style="text-align:right;">
+81.12195
+</td>
+<td style="text-align:right;">
+26023.6978
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Spain
+</td>
+<td style="text-align:right;">
+46480882
+</td>
+<td style="text-align:right;">
+83.22927
+</td>
+<td style="text-align:right;">
+31195.4052
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ireland
+</td>
+<td style="text-align:right;">
+4657740
+</td>
+<td style="text-align:right;">
+81.34878
+</td>
+<td style="text-align:right;">
+48898.3287
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+New Caledonia
+</td>
+<td style="text-align:right;">
+268050
+</td>
+<td style="text-align:right;">
+77.25287
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Solomon Islands
+</td>
+<td style="text-align:right;">
+575504
+</td>
+<td style="text-align:right;">
+70.11300
+</td>
+<td style="text-align:right;">
+2139.5607
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+New Zealand
+</td>
+<td style="text-align:right;">
+4509700
+</td>
+<td style="text-align:right;">
+81.40488
+</td>
+<td style="text-align:right;">
+34455.3312
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Australia
+</td>
+<td style="text-align:right;">
+23504138
+</td>
+<td style="text-align:right;">
+82.30000
+</td>
+<td style="text-align:right;">
+43547.1975
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sri Lanka
+</td>
+<td style="text-align:right;">
+20771000
+</td>
+<td style="text-align:right;">
+74.90600
+</td>
+<td style="text-align:right;">
+10650.3902
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+China
+</td>
+<td style="text-align:right;">
+1364270000
+</td>
+<td style="text-align:right;">
+75.93200
+</td>
+<td style="text-align:right;">
+12758.6478
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Taiwan
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Italy
+</td>
+<td style="text-align:right;">
+60789140
+</td>
+<td style="text-align:right;">
+83.09024
+</td>
+<td style="text-align:right;">
+33945.8439
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Denmark
+</td>
+<td style="text-align:right;">
+5643475
+</td>
+<td style="text-align:right;">
+80.70000
+</td>
+<td style="text-align:right;">
+45057.0742
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+United Kingdom
+</td>
+<td style="text-align:right;">
+64613160
+</td>
+<td style="text-align:right;">
+81.30488
+</td>
+<td style="text-align:right;">
+38251.7925
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Iceland
+</td>
+<td style="text-align:right;">
+327386
+</td>
+<td style="text-align:right;">
+82.86098
+</td>
+<td style="text-align:right;">
+41701.1373
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Azerbaijan
+</td>
+<td style="text-align:right;">
+9535079
+</td>
+<td style="text-align:right;">
+71.80000
+</td>
+<td style="text-align:right;">
+16715.1055
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Georgia
+</td>
+<td style="text-align:right;">
+3727000
+</td>
+<td style="text-align:right;">
+72.95100
+</td>
+<td style="text-align:right;">
+8749.1562
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Philippines
+</td>
+<td style="text-align:right;">
+100102249
+</td>
+<td style="text-align:right;">
+68.81300
+</td>
+<td style="text-align:right;">
+6585.8959
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Malaysia
+</td>
+<td style="text-align:right;">
+30228017
+</td>
+<td style="text-align:right;">
+74.97600
+</td>
+<td style="text-align:right;">
+24194.6339
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Brunei Darussalam
+</td>
+<td style="text-align:right;">
+411704
+</td>
+<td style="text-align:right;">
+76.91700
+</td>
+<td style="text-align:right;">
+76089.2866
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Slovenia
+</td>
+<td style="text-align:right;">
+2061980
+</td>
+<td style="text-align:right;">
+81.07805
+</td>
+<td style="text-align:right;">
+28417.6564
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Finland
+</td>
+<td style="text-align:right;">
+5461512
+</td>
+<td style="text-align:right;">
+81.18049
+</td>
+<td style="text-align:right;">
+39017.5372
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Slovakia
+</td>
+<td style="text-align:right;">
+5418649
+</td>
+<td style="text-align:right;">
+76.81220
+</td>
+<td style="text-align:right;">
+27285.2847
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Czech Republic
+</td>
+<td style="text-align:right;">
+10525347
+</td>
+<td style="text-align:right;">
+78.82439
+</td>
+<td style="text-align:right;">
+29119.6166
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Eritrea
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+64.17400
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Japan
+</td>
+<td style="text-align:right;">
+127276000
+</td>
+<td style="text-align:right;">
+83.58780
+</td>
+<td style="text-align:right;">
+37337.3174
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Paraguay
+</td>
+<td style="text-align:right;">
+6552584
+</td>
+<td style="text-align:right;">
+72.91300
+</td>
+<td style="text-align:right;">
+8501.5435
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Yemen
+</td>
+<td style="text-align:right;">
+26246327
+</td>
+<td style="text-align:right;">
+64.52300
+</td>
+<td style="text-align:right;">
+3766.8053
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Saudi Arabia
+</td>
+<td style="text-align:right;">
+30776722
+</td>
+<td style="text-align:right;">
+74.23400
+</td>
+<td style="text-align:right;">
+49958.4433
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Antarctica
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Northern Cyprus
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cyprus
+</td>
+<td style="text-align:right;">
+1152309
+</td>
+<td style="text-align:right;">
+80.17300
+</td>
+<td style="text-align:right;">
+29786.3657
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Morocco
+</td>
+<td style="text-align:right;">
+34318082
+</td>
+<td style="text-align:right;">
+75.30900
+</td>
+<td style="text-align:right;">
+7078.8815
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Egypt
+</td>
+<td style="text-align:right;">
+91812566
+</td>
+<td style="text-align:right;">
+71.12000
+</td>
+<td style="text-align:right;">
+9879.7994
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Libya
+</td>
+<td style="text-align:right;">
+6204108
+</td>
+<td style="text-align:right;">
+71.65900
+</td>
+<td style="text-align:right;">
+16371.9022
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ethiopia
+</td>
+<td style="text-align:right;">
+97366774
+</td>
+<td style="text-align:right;">
+64.53500
+</td>
+<td style="text-align:right;">
+1424.5270
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Djibouti
+</td>
+<td style="text-align:right;">
+912164
+</td>
+<td style="text-align:right;">
+62.00600
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Somaliland
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Uganda
+</td>
+<td style="text-align:right;">
+38833338
+</td>
+<td style="text-align:right;">
+59.22400
+</td>
+<td style="text-align:right;">
+1637.2751
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rwanda
+</td>
+<td style="text-align:right;">
+11345357
+</td>
+<td style="text-align:right;">
+66.18800
+</td>
+<td style="text-align:right;">
+1629.8689
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bosnia and Herzegovina
+</td>
+<td style="text-align:right;">
+3566002
+</td>
+<td style="text-align:right;">
+76.56100
+</td>
+<td style="text-align:right;">
+10516.7864
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Macedonia
+</td>
+<td style="text-align:right;">
+2077495
+</td>
+<td style="text-align:right;">
+75.38400
+</td>
+<td style="text-align:right;">
+12298.4902
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Serbia
+</td>
+<td style="text-align:right;">
+7130576
+</td>
+<td style="text-align:right;">
+75.33659
+</td>
+<td style="text-align:right;">
+13112.9090
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Montenegro
+</td>
+<td style="text-align:right;">
+621810
+</td>
+<td style="text-align:right;">
+76.71200
+</td>
+<td style="text-align:right;">
+14796.6354
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kosovo
+</td>
+<td style="text-align:right;">
+1821800
+</td>
+<td style="text-align:right;">
+71.09756
+</td>
+<td style="text-align:right;">
+8698.2916
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trinidad and Tobago
+</td>
+<td style="text-align:right;">
+1354493
+</td>
+<td style="text-align:right;">
+70.42600
+</td>
+<td style="text-align:right;">
+31181.8212
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+South Sudan
+</td>
+<td style="text-align:right;">
+11530971
+</td>
+<td style="text-align:right;">
+55.81700
+</td>
+<td style="text-align:right;">
+1935.8794
 </td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Note el uso del operador <code>%&gt;%</code>, llamado <em>pipe</em> (tubo), para transmitir datos entre funciones.</p>
 </div>
 
