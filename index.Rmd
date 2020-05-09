@@ -74,14 +74,14 @@ NOTA: recuerde que también puede explorar los datos con funciones como ```str()
 
 2. (5%) Mediante la función ```kable()``` del paquete [knitr](https://cran.r-project.org/web/packages/knitr/), despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las ocho primeras variables (i.e. columnas) del data frame  ```world```.
 ```{r}
-kable(world[1:10, 1:8], caption="Países del mundo")
+kable(world[1:10, 1:8], caption="Datos demográficos de los países del mundo")
 ```
 
-3. (5%) Mediante la función ```kable()```, despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las variables correspondientes a nombre del país, población, esperanza de vida y de renta per cápita del data frame  ```world```.
+3. (5%) Mediante la función ```kable()```, despliegue en una tabla las diez primeras observaciones y las variables correspondientes a nombre del país, población, esperanza de vida y de renta per cápita del data frame  ```world```. Despliegue los nombres de las columnas en español.
 ```{r}
 kable(
   world[1:10, c("name_long", "pop", "lifeExp", "gdpPercap")], 
   col.names = c("País", "Población", "Esperanza de vida", "Renta per cápita"),
-  caption="Países del mundo"
+  caption="Datos demográficos de los países del mundo"
   )
 ```
