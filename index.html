@@ -5216,11 +5216,11 @@ Africa
 </tbody>
 </table>
 </div>
-<p>Note el uso del operador <code>%&gt;%</code>, llamado <em>pipe</em> (tubo), para transmitir datos entre funciones.</p>
+<p>Note el uso del <a href="https://www.datacamp.com/community/tutorials/pipe-r-tutorial">operador <code>%&gt;%</code></a>, llamado <em>pipe</em> (tubo), para transmitir datos entre funciones.</p>
 <ol start="5" style="list-style-type: decimal">
-<li>(5%) Filtre el data frame <code>world</code> para extraer en otro data frame las observaciones correspondientes a los siete países de América Central. Mantenga las mismas columnas de los ejercicios anteriores y despliegue los datos en una tabla.</li>
+<li>(5%) Filtre el data frame <code>world</code> para extraer en otro data frame las observaciones correspondientes a los siete países de Centroamérica. Mantenga las mismas columnas de los ejercicios anteriores y despliegue los datos en una tabla.</li>
 </ol>
-<pre class="r"><code># Se extraen las observaciones ordenadas por orden alfabético de país
+<pre class="r"><code># Se extraen las observaciones correspondientes a los países de Centroamérica
 centro_america = world[world$name_long == &quot;Belize&quot; |
                        world$name_long == &quot;Guatemala&quot; |
                        world$name_long == &quot;Honduras&quot; |
@@ -5382,6 +5382,11 @@ North America
 </tr>
 </tbody>
 </table>
+<ol start="6" style="list-style-type: decimal">
+<li><p>(25%) Con la función <code>ggplot()</code> del paquete <a href="https://ggplot2.tidyverse.org/">ggplot2</a>, genere un gráfico de barras que muestre la esperanza de vida de los siete países de Centroamérica. El gráfico debe:</p></li>
+<li><p>(25%) Con la función <code>plot()</code> del paquete <a href="https://cran.r-project.org/web/packages/sf/index.html">sf</a>, genere un <a href="https://en.wikipedia.org/wiki/Choropleth_map">mapa de coropletas</a> con colores que muestren la esperanza de vida de los siete países de Centroamérica. El mapa debe llevar un título.</p></li>
+<li><p>(25%) Extraiga en un nuevo data frame los países de Centroamérica con esperanza de vida mayor o igual a 75 años y genere el mapa de coropletas y su título correspondientes.</p></li>
+</ol>
 </div>
 
 

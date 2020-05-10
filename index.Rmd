@@ -107,11 +107,11 @@ kable(
 kable_styling() %>%
 scroll_box(width = "800px", height = "500px", fixed_thead = TRUE)
 ```
-Note el uso del operador ```%>%```, llamado _pipe_ (tubo), para transmitir datos entre funciones.
+Note el uso del [operador ```%>%```](https://www.datacamp.com/community/tutorials/pipe-r-tutorial), llamado _pipe_ (tubo), para transmitir datos entre funciones.
 
-5. (5%) Filtre el data frame ```world``` para extraer en otro data frame las observaciones correspondientes a los siete países de América Central. Mantenga las mismas columnas de los ejercicios anteriores y despliegue los datos en una tabla.
+5. (5%) Filtre el data frame ```world``` para extraer en otro data frame las observaciones correspondientes a los siete países de Centroamérica. Mantenga las mismas columnas de los ejercicios anteriores y despliegue los datos en una tabla.
 ```{r}
-# Se extraen las observaciones ordenadas por orden alfabético de país
+# Se extraen las observaciones correspondientes a los países de Centroamérica
 centro_america = world[world$name_long == "Belize" |
                        world$name_long == "Guatemala" |
                        world$name_long == "Honduras" |
@@ -128,4 +128,16 @@ kable(
   caption="Datos demográficos de los países de Centroamérica"
   ) %>%
 kable_styling()
+```
+
+6. (25%) Con la función ```ggplot()``` del paquete [ggplot2](https://ggplot2.tidyverse.org/), genere un gráfico de barras que muestre la esperanza de vida de los siete países de Centroamérica. El gráfico debe:
+```{r}
+```
+
+7. (25%) Con la función ```plot()``` del paquete [sf](https://cran.r-project.org/web/packages/sf/index.html), genere un [mapa de coropletas](https://en.wikipedia.org/wiki/Choropleth_map) con colores que muestren la esperanza de vida de los siete países de Centroamérica. El mapa debe llevar un título.
+```{r}
+```
+
+8. (25%) Extraiga en un nuevo data frame los países de Centroamérica con esperanza de vida mayor o igual a 75 años y genere el mapa de coropletas y su título correspondientes.
+```{r}
 ```
