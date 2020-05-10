@@ -141,11 +141,11 @@ Con la función ```ggplot()``` del paquete [ggplot2](https://ggplot2.tidyverse.o
 ```
 
 ### Ejercicio 7 (25%)
-Con la función ```plot()``` del paquete [sf](https://cran.r-project.org/web/packages/sf/index.html), genere un [mapa de coropletas](https://en.wikipedia.org/wiki/Choropleth_map) con colores que muestren la esperanza de vida de los siete países de Centroamérica. El mapa debe llevar un título.
+Con la función ```plot()``` del paquete [sf](https://cran.r-project.org/web/packages/sf/index.html), genere un [mapa de coropletas](https://en.wikipedia.org/wiki/Choropleth_map) con colores que reflejen la esperanza de vida de los siete países de Centroamérica. El mapa debe llevar un título.
 ```{r}
 ```
 
 ### Ejercicio 8 (25%)
-Extraiga en un nuevo data frame los países de Centroamérica con esperanza de vida mayor o igual a 75 años y genere el mapa de coropletas y su título correspondientes.
+Extraiga en un nuevo data frame los países de Centroamérica con esperanza de vida mayor o igual a 74 años y genere el mapa de coropletas y su título correspondientes.
 ```{r}
 ```
