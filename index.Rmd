@@ -50,7 +50,7 @@ Ejecute los siguientes pasos para bifurcar a su cuenta en GitHub el repositorio 
 ## Desarrollo
 En los siguientes ejercicios se utiliza el data frame ```world```, contenido en el paquete [spData](https://cran.r-project.org/web/packages/spData/).
 
-0. Carga de paquetes:
+### Carga de paquetes
 ```{r}
 # Paquete para generación de documentos (ej. HTML)
 library(knitr)
