@@ -1663,7 +1663,10 @@ library(spData)</code></pre>
 <div id="ejercicio-2-5" class="section level3">
 <h3>Ejercicio 2 (5%)</h3>
 <p>Mediante la función <code>kable()</code> del paquete <a href="https://cran.r-project.org/web/packages/knitr/">knitr</a>, despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las ocho primeras variables (i.e. columnas) del data frame <code>world</code>.</p>
-<pre class="r"><code>kable(world[1:10, 1:8], caption=&quot;Datos demográficos de los países del mundo&quot;)</code></pre>
+<pre class="r"><code>kable(
+  world[1:10, 1:8], 
+  caption=&quot;Datos demográficos de los países del mundo&quot;
+)</code></pre>
 <table>
 <caption>
 Datos demográficos de los países del mundo
@@ -1967,7 +1970,7 @@ Sovereign country
   world[1:10, c(&quot;name_long&quot;,&quot;continent&quot;,&quot;pop&quot;,&quot;lifeExp&quot;,&quot;gdpPercap&quot;)], 
   col.names=c(&quot;País&quot;,&quot;Continente&quot;,&quot;Población&quot;,&quot;Esperanza de vida&quot;,&quot;Renta per cápita&quot;),
   caption=&quot;Datos demográficos de los países del mundo&quot;
-  )</code></pre>
+)</code></pre>
 <table>
 <caption>
 Datos demográficos de los países del mundo
@@ -2179,9 +2182,13 @@ kable(
   world.ordenadoxpais[, c(&quot;name_long&quot;,&quot;continent&quot;,&quot;pop&quot;,&quot;lifeExp&quot;,&quot;gdpPercap&quot;)], 
   col.names=c(&quot;País&quot;,&quot;Continente&quot;,&quot;Población&quot;,&quot;Esperanza de vida&quot;,&quot;Renta per cápita&quot;),
   caption=&quot;Datos demográficos de los países del mundo&quot;
-  ) %&gt;%
+) %&gt;%
 kable_styling() %&gt;%
-scroll_box(width = &quot;800px&quot;, height = &quot;500px&quot;, fixed_thead = TRUE)</code></pre>
+scroll_box(
+  width = &quot;800px&quot;, 
+  height = &quot;500px&quot;, 
+  fixed_thead = TRUE
+)</code></pre>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:800px; ">
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -5239,7 +5246,7 @@ kable(
   centro_america[, c(&quot;name_long&quot;,&quot;continent&quot;,&quot;pop&quot;,&quot;lifeExp&quot;,&quot;gdpPercap&quot;)], 
   col.names=c(&quot;País&quot;,&quot;Continente&quot;,&quot;Población&quot;,&quot;Esperanza de vida&quot;,&quot;Renta per cápita&quot;),
   caption=&quot;Datos demográficos de los países de Centroamérica&quot;
-  ) %&gt;%
+) %&gt;%
 kable_styling()</code></pre>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>

@@ -80,7 +80,10 @@ NOTA: recuerde que también puede explorar los datos con funciones como ```str()
 ### Ejercicio 2 (5%)
 Mediante la función ```kable()``` del paquete [knitr](https://cran.r-project.org/web/packages/knitr/), despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las ocho primeras variables (i.e. columnas) del data frame  ```world```.
 ```{r}
-kable(world[1:10, 1:8], caption="Datos demográficos de los países del mundo")
+kable(
+  world[1:10, 1:8], 
+  caption="Datos demográficos de los países del mundo"
+)
 ```
 
 ### Ejercicio 3 (5%)
@@ -90,7 +93,7 @@ kable(
   world[1:10, c("name_long","continent","pop","lifeExp","gdpPercap")], 
   col.names=c("País","Continente","Población","Esperanza de vida","Renta per cápita"),
   caption="Datos demográficos de los países del mundo"
-  )
+)
 ```
 
 ### Ejercicio 4 (5%)
@@ -107,9 +110,13 @@ kable(
   world.ordenadoxpais[, c("name_long","continent","pop","lifeExp","gdpPercap")], 
   col.names=c("País","Continente","Población","Esperanza de vida","Renta per cápita"),
   caption="Datos demográficos de los países del mundo"
-  ) %>%
+) %>%
 kable_styling() %>%
-scroll_box(width = "800px", height = "500px", fixed_thead = TRUE)
+scroll_box(
+  width = "800px", 
+  height = "500px", 
+  fixed_thead = TRUE
+)
 ```
 Note el uso del [operador ```%>%```](https://www.datacamp.com/community/tutorials/pipe-r-tutorial), llamado _pipe_ (tubo), para transmitir datos entre funciones.
 
@@ -131,7 +138,7 @@ kable(
   centro_america[, c("name_long","continent","pop","lifeExp","gdpPercap")], 
   col.names=c("País","Continente","Población","Esperanza de vida","Renta per cápita"),
   caption="Datos demográficos de los países de Centroamérica"
-  ) %>%
+) %>%
 kable_styling()
 ```
 
