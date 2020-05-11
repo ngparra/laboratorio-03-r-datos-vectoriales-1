@@ -157,6 +157,7 @@ ggplot(centro_america, aes(x=reorder(name_long, -lifeExp), y=lifeExp)) +
 ### Ejercicio 7 (25%)
 Con la función ```plot()``` del paquete [sf](https://cran.r-project.org/web/packages/sf/index.html), genere un [mapa de coropletas](https://en.wikipedia.org/wiki/Choropleth_map) con colores que reflejen la esperanza de vida de los siete países de Centroamérica. El mapa debe llevar un título.
 ```{r}
+plot(centro_america["lifeExp"], main= "Mapa de Esperanza de vida para Centroamérica, Belice y Panama")
 ```
 
 ### Ejercicio 8 (25%)
