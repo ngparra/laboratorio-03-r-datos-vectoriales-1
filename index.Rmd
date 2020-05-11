@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Descripción general
-En este laboratorio, aplicará varios comandos de graficación y de manejo de datos geoespaciales vectoriales en el lenguaje de programación [R](https://www.r-project.org/). El resultado final será un documento en la sintaxis [R Markdown](https://rmarkdown.rstudio.com/) publicado en [GitHub Pages](https://pages.github.com/).
+En este laboratorio, aplicará varios comandos de graficación y de manejo de datos geoespaciales vectoriales en el lenguaje de programación [R](https://www.r-project.org/). También trabajará con datos tabulares y gráficos. El resultado final será un documento en la sintaxis [R Markdown](https://rmarkdown.rstudio.com/) publicado en [GitHub Pages](https://pages.github.com/).
 
 ## Fecha de entrega y entregables
 La fecha límite de entrega de este laboratorio es el **lunes 18 de mayo de 2020**. Debe enviarle al profesor por correo electrónico la dirección del sitio en GitHub Pages resultante.
@@ -38,7 +38,7 @@ Se recomienda leer el material preparado por el profesor y consultar los recurso
 * [Tutorial sobre Git](https://geoprocesamiento-2020i.github.io/tutorial-git/).
 
 ## Bifuración y clonación de este documento
-Ejecute los siguientes pasos para bifurcar a su cuenta en GitHub el repositorio que contiene este documento y posteriormente clonarlo a su computadora para editarlo con RStudio:
+Ejecute los siguientes pasos para bifurcar a su cuenta en GitHub el repositorio que contiene este documento y posteriormente clonarlo a su computadora, para editarlo con RStudio:
 
 1. Bifurque (_fork_) el repositorio [https://github.com/geoprocesamiento-2020i/laboratorio-03-r-datos-vectoriales-1](https://github.com/geoprocesamiento-2020i/laboratorio-03-r-datos-vectoriales-1) a su cuenta personal en GitHub.
 2. En el apartado _Settings_ del repositorio bifurcado a su cuenta, busque la sección _GitHub Pages_ y habilítela al seleccionar _master branch_ como fuente. Tome nota de la dirección web resultante (ej. https://usuario.github.io/laboratorio-03-r-datos-vectoriales-1/).
@@ -62,7 +62,7 @@ library(kableExtra)
 library(ggplot2)
 
 # Paquete de manejo de datos geoespaciales vectoriales
-# library(sf)
+library(sf)
 
 # Paquete con conjuntos de datos geoespaciales
 library(spData)
@@ -78,20 +78,21 @@ names(world)
 NOTA: recuerde que también puede explorar los datos con funciones como ```str()```, ```summary()``` y ```View()```.
 
 ### Ejercicio 2 (5%)
-Mediante la función ```kable()``` del paquete [knitr](https://cran.r-project.org/web/packages/knitr/), despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las ocho primeras variables (i.e. columnas) del data frame  ```world```.
+Mediante la función ```kable()``` del paquete [knitr](https://cran.r-project.org/web/packages/knitr/), despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las cinco primeras variables (i.e. columnas) del data frame  ```world```.
 ```{r}
 kable(
-  world[1:10, 1:8], 
+  world[1:10, 1:5, drop = TRUE], 
   caption="Datos demográficos de los países del mundo"
 )
 ```
+Note el uso del parámetro ```drop=TRUE```, para evitar el despliegue de la tabla de geometrías.
 
 ### Ejercicio 3 (5%)
 Mediante la función ```kable()```, despliegue en una tabla las diez primeras observaciones y las variables correspondientes a nombre del país, continente, población, esperanza de vida y renta per cápita del data frame  ```world```. Despliegue los nombres de las columnas en español y un título para la tabla.
 ```{r}
 kable(
-  world[1:10, c("name_long","continent","pop","lifeExp","gdpPercap")], 
-  col.names=c("País","Continente","Población","Esperanza de vida","Renta per cápita"),
+  world[1:10, c("name_long","continent","pop","lifeExp","gdpPercap"), drop = TRUE], 
+  col.names=c("País","Continente","Población","Esperanza de vida","Renta per cápita"),  
   caption="Datos demográficos de los países del mundo"
 )
 ```
@@ -107,8 +108,8 @@ world.ordenadoxpais <- world[world.orden,]
 
 # Se formatea la tabla con el nuevo data frame
 kable(
-  world.ordenadoxpais[, c("name_long","continent","pop","lifeExp","gdpPercap")], 
-  col.names=c("País","Continente","Población","Esperanza de vida","Renta per cápita"),
+  world.ordenadoxpais[, c("name_long","continent","pop","lifeExp","gdpPercap"), drop = TRUE], 
+  col.names=c("País","Continente","Población","Esperanza de vida","Renta per cápita"),  
   caption="Datos demográficos de los países del mundo"
 ) %>%
 kable_styling() %>%
@@ -135,15 +136,15 @@ centro_america = world[world$name_long == "Belize" |
 
 # Se formatea la tabla con el nuevo data frame
 kable(
-  centro_america[, c("name_long","continent","pop","lifeExp","gdpPercap")], 
-  col.names=c("País","Continente","Población","Esperanza de vida","Renta per cápita"),
+  centro_america[, c("name_long","continent","pop","lifeExp","gdpPercap"), drop = TRUE], 
+  col.names=c("País","Continente","Población","Esperanza de vida","Renta per cápita"),  
   caption="Datos demográficos de los países de Centroamérica"
 ) %>%
 kable_styling()
 ```
 
 ### Ejercicio 6 (25%)
-Con la función ```ggplot()``` del paquete [ggplot2](https://ggplot2.tidyverse.org/), genere un gráfico de barras que muestre la esperanza de vida de los siete países de Centroamérica.
+Con la función ```ggplot()``` del paquete [ggplot2](https://ggplot2.tidyverse.org/), genere un gráfico de barras que muestre la esperanza de vida de los siete países de Centroamérica. El gráfico debe tener un título, los nombres (o códigos) de los países bajo cada barra, los valores sobre las barras y etiquetas para los ejes x e y.
 ```{r}
 ```
 
@@ -153,6 +154,6 @@ Con la función ```plot()``` del paquete [sf](https://cran.r-project.org/web/pac
 ```
 
 ### Ejercicio 8 (25%)
-Extraiga en un nuevo data frame los países de Centroamérica con esperanza de vida mayor o igual a 74 años y genere el mapa de coropletas, con su título, correspondiente.
+Extraiga en un nuevo data frame los países de Centroamérica con esperanza de vida mayor o igual a 74 años y genere el mapa de coropletas, con su título correspondiente.
 ```{r}
 ```

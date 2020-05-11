@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 <meta name="author" content="Manuel Vargas" />
@@ -81,8 +81,6 @@ overflow: auto;
 margin-left: 2%;
 position: fixed;
 border: 1px solid #ccc;
-webkit-border-radius: 6px;
-moz-border-radius: 6px;
 border-radius: 6px;
 }
 
@@ -110,9 +108,14 @@ font-size: 12px;
 .tocify-subheader .tocify-subheader {
 text-indent: 30px;
 }
-
 .tocify-subheader .tocify-subheader .tocify-subheader {
 text-indent: 40px;
+}
+.tocify-subheader .tocify-subheader .tocify-subheader .tocify-subheader {
+text-indent: 50px;
+}
+.tocify-subheader .tocify-subheader .tocify-subheader .tocify-subheader .tocify-subheader {
+text-indent: 60px;
 }
 
 .tocify .tocify-item > a, .tocify .nav-list .nav-header {
@@ -516,13 +519,13 @@ float: none;
 
           item.append($("<a/>", {
 
-            "text": self.text()
+            "html": self.html()
 
           }));
 
         } else {
 
-          item.text(self.text());
+          item.html(self.html());
 
         }
 
@@ -1362,7 +1365,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -1424,6 +1426,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -1436,48 +1439,9 @@ summary {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = false;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -1491,6 +1455,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -1526,8 +1496,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -1576,9 +1544,9 @@ div.tocify {
 </div>
 
 
-<div id="descripcion-general" class="section level2">
+<div id="descripción-general" class="section level2">
 <h2>Descripción general</h2>
-<p>En este laboratorio, aplicará varios comandos de graficación y de manejo de datos geoespaciales vectoriales en el lenguaje de programación <a href="https://www.r-project.org/">R</a>. El resultado final será un documento en la sintaxis <a href="https://rmarkdown.rstudio.com/">R Markdown</a> publicado en <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+<p>En este laboratorio, aplicará varios comandos de graficación y de manejo de datos geoespaciales vectoriales en el lenguaje de programación <a href="https://www.r-project.org/">R</a>. También trabajará con datos tabulares y gráficos. El resultado final será un documento en la sintaxis <a href="https://rmarkdown.rstudio.com/">R Markdown</a> publicado en <a href="https://pages.github.com/">GitHub Pages</a>.</p>
 </div>
 <div id="fecha-de-entrega-y-entregables" class="section level2">
 <h2>Fecha de entrega y entregables</h2>
@@ -1607,11 +1575,11 @@ div.tocify {
 <li><a href="https://geoprocesamiento-2020i.github.io/tutorial-git/">Tutorial sobre Git</a>.</li>
 </ul>
 </div>
-<div id="bifuracion-y-clonacion-de-este-documento" class="section level2">
+<div id="bifuración-y-clonación-de-este-documento" class="section level2">
 <h2>Bifuración y clonación de este documento</h2>
-<p>Ejecute los siguientes pasos para bifurcar a su cuenta en GitHub el repositorio que contiene este documento y posteriormente clonarlo a su computadora para editarlo con RStudio:</p>
+<p>Ejecute los siguientes pasos para bifurcar a su cuenta en GitHub el repositorio que contiene este documento y posteriormente clonarlo a su computadora, para editarlo con RStudio:</p>
 <ol style="list-style-type: decimal">
-<li>Bifurque (<em>fork</em>) el repositorio <a href="https://github.com/geoprocesamiento-2020i/laboratorio-03-r-datos-vectoriales-1" class="uri">https://github.com/geoprocesamiento-2020i/laboratorio-03-r-datos-vectoriales-1</a> a su cuenta personal en GitHub.</li>
+<li>Bifurque (<em>fork</em>) el repositorio <a href="https://github.com/geoprocesamiento-2020i/laboratorio-03-r-datos-vectoriales-1">https://github.com/geoprocesamiento-2020i/laboratorio-03-r-datos-vectoriales-1</a> a su cuenta personal en GitHub.</li>
 <li>En el apartado <em>Settings</em> del repositorio bifurcado a su cuenta, busque la sección <em>GitHub Pages</em> y habilítela al seleccionar <em>master branch</em> como fuente. Tome nota de la dirección web resultante (ej. <a href="https://usuario.github.io/laboratorio-03-r-datos-vectoriales-1/" class="uri">https://usuario.github.io/laboratorio-03-r-datos-vectoriales-1/</a>).</li>
 <li>En RStudio, clone el repositorio de su cuenta personal con la opción de menú <em>File - New Project - Version Control - Git</em>. En <em>Repository URL</em> escriba la dirección de su repositorio (ej. <a href="https://usuario.github.io/laboratorio-03-r-datos-vectoriales-1.git" class="uri">https://usuario.github.io/laboratorio-03-r-datos-vectoriales-1.git</a>). Puede obtener esta dirección con el botón <em>Clone or download</em>, en la página principal del mismo repositorio.</li>
 <li>En R Studio, abra el documento <em>index.Rmd</em> y desarrolle los ejercicios del laboratorio. Cada vez que desee actualizar su documento en GitHub y GitHub Pages:</li>
@@ -1630,41 +1598,31 @@ div.tocify {
 library(knitr)
 
 # Paquete para formateo de tablas
-library(kableExtra)</code></pre>
-<pre><code>## Registered S3 method overwritten by 'rvest':
-##   method            from
-##   read_xml.response xml2</code></pre>
-<pre class="r"><code># Paquete de graficación
-library(ggplot2)</code></pre>
-<pre><code>## Registered S3 methods overwritten by 'ggplot2':
-##   method         from 
-##   [.quosures     rlang
-##   c.quosures     rlang
-##   print.quosures rlang</code></pre>
-<pre class="r"><code># Paquete de manejo de datos geoespaciales vectoriales
-# library(sf)
+library(kableExtra)
 
-# Paquete con conjuntos de datos geoespaciales
+# Paquete de graficación
+library(ggplot2)
+
+# Paquete de manejo de datos geoespaciales vectoriales
+library(sf)</code></pre>
+<pre><code>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1</code></pre>
+<pre class="r"><code># Paquete con conjuntos de datos geoespaciales
 library(spData)</code></pre>
-<pre><code>## To access larger datasets in this package, install the spDataLarge
-## package with: `install.packages('spDataLarge',
-## repos='https://nowosad.github.io/drat/', type='source')`</code></pre>
 <p>Realice los siguientes ejercicios de graficación y manejo de datos vectoriales en R (el valor porcentual de cada uno se muestra entre paréntesis).</p>
 </div>
 <div id="ejercicio-1-5" class="section level3">
 <h3>Ejercicio 1 (5%)</h3>
 <p>Mediante la función <code>names()</code>, observe las columnas que componen el data frame <code>world</code>.</p>
 <pre class="r"><code>names(world)</code></pre>
-<pre><code>##  [1] &quot;iso_a2&quot;    &quot;name_long&quot; &quot;continent&quot; &quot;region_un&quot; &quot;subregion&quot;
-##  [6] &quot;type&quot;      &quot;area_km2&quot;  &quot;pop&quot;       &quot;lifeExp&quot;   &quot;gdpPercap&quot;
-## [11] &quot;geom&quot;</code></pre>
+<pre><code>##  [1] &quot;iso_a2&quot;    &quot;name_long&quot; &quot;continent&quot; &quot;region_un&quot; &quot;subregion&quot; &quot;type&quot;     
+##  [7] &quot;area_km2&quot;  &quot;pop&quot;       &quot;lifeExp&quot;   &quot;gdpPercap&quot; &quot;geom&quot;</code></pre>
 <p>NOTA: recuerde que también puede explorar los datos con funciones como <code>str()</code>, <code>summary()</code> y <code>View()</code>.</p>
 </div>
 <div id="ejercicio-2-5" class="section level3">
 <h3>Ejercicio 2 (5%)</h3>
-<p>Mediante la función <code>kable()</code> del paquete <a href="https://cran.r-project.org/web/packages/knitr/">knitr</a>, despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las ocho primeras variables (i.e. columnas) del data frame <code>world</code>.</p>
+<p>Mediante la función <code>kable()</code> del paquete <a href="https://cran.r-project.org/web/packages/knitr/">knitr</a>, despliegue en una tabla las diez primeras observaciones (i.e. filas, registros) y las cinco primeras variables (i.e. columnas) del data frame <code>world</code>.</p>
 <pre class="r"><code>kable(
-  world[1:10, 1:8], 
+  world[1:10, 1:5, drop = TRUE], 
   caption=&quot;Datos demográficos de los países del mundo&quot;
 )</code></pre>
 <table>
@@ -1688,15 +1646,6 @@ region_un
 <th style="text-align:left;">
 subregion
 </th>
-<th style="text-align:left;">
-type
-</th>
-<th style="text-align:right;">
-area_km2
-</th>
-<th style="text-align:right;">
-pop
-</th>
 </tr>
 </thead>
 <tbody>
@@ -1716,15 +1665,6 @@ Oceania
 <td style="text-align:left;">
 Melanesia
 </td>
-<td style="text-align:left;">
-Sovereign country
-</td>
-<td style="text-align:right;">
-19289.97
-</td>
-<td style="text-align:right;">
-885806
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1741,15 +1681,6 @@ Africa
 </td>
 <td style="text-align:left;">
 Eastern Africa
-</td>
-<td style="text-align:left;">
-Sovereign country
-</td>
-<td style="text-align:right;">
-932745.79
-</td>
-<td style="text-align:right;">
-52234869
 </td>
 </tr>
 <tr>
@@ -1768,15 +1699,6 @@ Africa
 <td style="text-align:left;">
 Northern Africa
 </td>
-<td style="text-align:left;">
-Indeterminate
-</td>
-<td style="text-align:right;">
-96270.60
-</td>
-<td style="text-align:right;">
-NA
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1793,15 +1715,6 @@ Americas
 </td>
 <td style="text-align:left;">
 Northern America
-</td>
-<td style="text-align:left;">
-Sovereign country
-</td>
-<td style="text-align:right;">
-10036042.98
-</td>
-<td style="text-align:right;">
-35535348
 </td>
 </tr>
 <tr>
@@ -1820,15 +1733,6 @@ Americas
 <td style="text-align:left;">
 Northern America
 </td>
-<td style="text-align:left;">
-Country
-</td>
-<td style="text-align:right;">
-9510743.74
-</td>
-<td style="text-align:right;">
-318622525
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1845,15 +1749,6 @@ Asia
 </td>
 <td style="text-align:left;">
 Central Asia
-</td>
-<td style="text-align:left;">
-Sovereign country
-</td>
-<td style="text-align:right;">
-2729810.51
-</td>
-<td style="text-align:right;">
-17288285
 </td>
 </tr>
 <tr>
@@ -1872,15 +1767,6 @@ Asia
 <td style="text-align:left;">
 Central Asia
 </td>
-<td style="text-align:left;">
-Sovereign country
-</td>
-<td style="text-align:right;">
-461410.26
-</td>
-<td style="text-align:right;">
-30757700
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1897,15 +1783,6 @@ Oceania
 </td>
 <td style="text-align:left;">
 Melanesia
-</td>
-<td style="text-align:left;">
-Sovereign country
-</td>
-<td style="text-align:right;">
-464520.07
-</td>
-<td style="text-align:right;">
-7755785
 </td>
 </tr>
 <tr>
@@ -1924,15 +1801,6 @@ Asia
 <td style="text-align:left;">
 South-Eastern Asia
 </td>
-<td style="text-align:left;">
-Sovereign country
-</td>
-<td style="text-align:right;">
-1819251.33
-</td>
-<td style="text-align:right;">
-255131116
-</td>
 </tr>
 <tr>
 <td style="text-align:left;">
@@ -1950,25 +1818,17 @@ Americas
 <td style="text-align:left;">
 South America
 </td>
-<td style="text-align:left;">
-Sovereign country
-</td>
-<td style="text-align:right;">
-2784468.59
-</td>
-<td style="text-align:right;">
-42981515
-</td>
 </tr>
 </tbody>
 </table>
+<p>Note el uso del parámetro <code>drop=TRUE</code>, para evitar el despliegue de la tabla de geometrías.</p>
 </div>
 <div id="ejercicio-3-5" class="section level3">
 <h3>Ejercicio 3 (5%)</h3>
 <p>Mediante la función <code>kable()</code>, despliegue en una tabla las diez primeras observaciones y las variables correspondientes a nombre del país, continente, población, esperanza de vida y renta per cápita del data frame <code>world</code>. Despliegue los nombres de las columnas en español y un título para la tabla.</p>
 <pre class="r"><code>kable(
-  world[1:10, c(&quot;name_long&quot;,&quot;continent&quot;,&quot;pop&quot;,&quot;lifeExp&quot;,&quot;gdpPercap&quot;)], 
-  col.names=c(&quot;País&quot;,&quot;Continente&quot;,&quot;Población&quot;,&quot;Esperanza de vida&quot;,&quot;Renta per cápita&quot;),
+  world[1:10, c(&quot;name_long&quot;,&quot;continent&quot;,&quot;pop&quot;,&quot;lifeExp&quot;,&quot;gdpPercap&quot;), drop = TRUE], 
+  col.names=c(&quot;País&quot;,&quot;Continente&quot;,&quot;Población&quot;,&quot;Esperanza de vida&quot;,&quot;Renta per cápita&quot;),  
   caption=&quot;Datos demográficos de los países del mundo&quot;
 )</code></pre>
 <table>
@@ -2179,8 +2039,8 @@ world.ordenadoxpais &lt;- world[world.orden,]
 
 # Se formatea la tabla con el nuevo data frame
 kable(
-  world.ordenadoxpais[, c(&quot;name_long&quot;,&quot;continent&quot;,&quot;pop&quot;,&quot;lifeExp&quot;,&quot;gdpPercap&quot;)], 
-  col.names=c(&quot;País&quot;,&quot;Continente&quot;,&quot;Población&quot;,&quot;Esperanza de vida&quot;,&quot;Renta per cápita&quot;),
+  world.ordenadoxpais[, c(&quot;name_long&quot;,&quot;continent&quot;,&quot;pop&quot;,&quot;lifeExp&quot;,&quot;gdpPercap&quot;), drop = TRUE], 
+  col.names=c(&quot;País&quot;,&quot;Continente&quot;,&quot;Población&quot;,&quot;Esperanza de vida&quot;,&quot;Renta per cápita&quot;),  
   caption=&quot;Datos demográficos de los países del mundo&quot;
 ) %&gt;%
 kable_styling() %&gt;%
@@ -5243,8 +5103,8 @@ centro_america = world[world$name_long == &quot;Belize&quot; |
 
 # Se formatea la tabla con el nuevo data frame
 kable(
-  centro_america[, c(&quot;name_long&quot;,&quot;continent&quot;,&quot;pop&quot;,&quot;lifeExp&quot;,&quot;gdpPercap&quot;)], 
-  col.names=c(&quot;País&quot;,&quot;Continente&quot;,&quot;Población&quot;,&quot;Esperanza de vida&quot;,&quot;Renta per cápita&quot;),
+  centro_america[, c(&quot;name_long&quot;,&quot;continent&quot;,&quot;pop&quot;,&quot;lifeExp&quot;,&quot;gdpPercap&quot;), drop = TRUE], 
+  col.names=c(&quot;País&quot;,&quot;Continente&quot;,&quot;Población&quot;,&quot;Esperanza de vida&quot;,&quot;Renta per cápita&quot;),  
   caption=&quot;Datos demográficos de los países de Centroamérica&quot;
 ) %&gt;%
 kable_styling()</code></pre>
@@ -5396,7 +5256,7 @@ North America
 </div>
 <div id="ejercicio-6-25" class="section level3">
 <h3>Ejercicio 6 (25%)</h3>
-<p>Con la función <code>ggplot()</code> del paquete <a href="https://ggplot2.tidyverse.org/">ggplot2</a>, genere un gráfico de barras que muestre la esperanza de vida de los siete países de Centroamérica.</p>
+<p>Con la función <code>ggplot()</code> del paquete <a href="https://ggplot2.tidyverse.org/">ggplot2</a>, genere un gráfico de barras que muestre la esperanza de vida de los siete países de Centroamérica. El gráfico debe tener un título, los nombres (o códigos) de los países bajo cada barra, los valores sobre las barras y etiquetas para los ejes x e y.</p>
 </div>
 <div id="ejercicio-7-25" class="section level3">
 <h3>Ejercicio 7 (25%)</h3>
@@ -5404,7 +5264,7 @@ North America
 </div>
 <div id="ejercicio-8-25" class="section level3">
 <h3>Ejercicio 8 (25%)</h3>
-<p>Extraiga en un nuevo data frame los países de Centroamérica con esperanza de vida mayor o igual a 74 años y genere el mapa de coropletas, con su título, correspondiente.</p>
+<p>Extraiga en un nuevo data frame los países de Centroamérica con esperanza de vida mayor o igual a 74 años y genere el mapa de coropletas, con su título correspondiente.</p>
 </div>
 </div>
 
@@ -5426,6 +5286,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
